@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "955866805727",
+    "project_id": "gad-2023-early",
+    "storage_bucket": "gad-2023-early.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:955866805727:android:5d1eaef8ab427bb0e8c06a",
+        "android_client_info": {
+          "package_name": "com.early2023.gad_2023_early_2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "955866805727-5d0mcbdd88gv4st6qrp5dqgd9vnufnoj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZLKp0kXskaPJA7Gza71RS_jKHQxCF_sA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "955866805727-5d0mcbdd88gv4st6qrp5dqgd9vnufnoj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "955866805727-2sdmjcg1s8spqiqr1f3jlv59iqcflpfm.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.early2023.gad2023Early2"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:955866805727:android:2c417290ec8603abe8c06a",
+        "android_client_info": {
+          "package_name": "com.early2023.gad_2023_early_2.emag_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "955866805727-5d0mcbdd88gv4st6qrp5dqgd9vnufnoj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZLKp0kXskaPJA7Gza71RS_jKHQxCF_sA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "955866805727-5d0mcbdd88gv4st6qrp5dqgd9vnufnoj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "955866805727-2sdmjcg1s8spqiqr1f3jlv59iqcflpfm.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.early2023.gad2023Early2"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
