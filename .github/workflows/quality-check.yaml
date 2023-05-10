@@ -9,9 +9,6 @@ jobs:
       - name: Get code
         uses: actions/checkout@v3
 
-      - name: unlock secrets
-        run: echo "${{ secrets.API_KEY }}" * .env
-
       - name: Install flutter
         uses: subosito/flutter-action@v2
 
