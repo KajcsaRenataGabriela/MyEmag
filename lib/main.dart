@@ -2,11 +2,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:gad_2023_early_2/src/actions/index.dart';
 import 'package:redux/redux.dart';
 import 'package:redux_epics/redux_epics.dart';
 
 import 'firebase_options.dart';
+import 'src/actions/index.dart';
 import 'src/data/auth_api.dart';
 import 'src/epics/app_epics.dart';
 import 'src/epics/auth_epics.dart';
