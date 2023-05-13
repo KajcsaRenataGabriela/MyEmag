@@ -21,10 +21,8 @@ class AuthApi {
     );
   }
 
-  Future<AppUser> createUser(
-      {required String email, required String password}) async {
-    final UserCredential credential = await _auth
-        .createUserWithEmailAndPassword(email: email, password: password);
+  Future<AppUser> createUser({required String email, required String password}) async {
+    final UserCredential credential = await _auth.createUserWithEmailAndPassword(email: email, password: password);
     final User user = credential.user!;
 
     return AppUser(
@@ -34,10 +32,8 @@ class AuthApi {
     );
   }
 
-  Future<AppUser> loginUser(
-      {required String email, required String password}) async {
-    final UserCredential credential = await _auth.signInWithEmailAndPassword(
-        email: email, password: password);
+  Future<AppUser> loginUser({required String email, required String password}) async {
+    final UserCredential credential = await _auth.signInWithEmailAndPassword(email: email, password: password);
     final User user = credential.user!;
 
     return AppUser(

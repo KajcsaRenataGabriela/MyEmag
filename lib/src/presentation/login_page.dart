@@ -26,8 +26,7 @@ class _LoginPageState extends State<LoginPage> {
     if (password.length < 6) {
       return;
     }
-    StoreProvider.of<AppState>(context).dispatch(
-        LoginUserStart(email: email, password: password, result: _onResult));
+    StoreProvider.of<AppState>(context).dispatch(LoginUserStart(email: email, password: password, result: _onResult));
   }
 
   void _onResult(dynamic action) {

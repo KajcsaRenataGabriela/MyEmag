@@ -7,6 +7,5 @@ class AppState with _$AppState {
     @Default(<String>{}) Set<String> pendingActions,
   }) = AppState$;
 
-  factory AppState.fromJson(Map<dynamic, dynamic> json) =>
-      _$AppStateFromJson(Map<String, dynamic>.from(json));
+  factory AppState.fromJson(Map<dynamic, dynamic> json) => _$AppStateFromJson(Map<String, dynamic>.from(json));
 }

@@ -13,8 +13,7 @@ _$AppUser$ _$$AppUser$FromJson(Map<String, dynamic> json) => _$AppUser$(
       profileUrl: json['profileUrl'] as String?,
     );
 
-Map<String, dynamic> _$$AppUser$ToJson(_$AppUser$ instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$$AppUser$ToJson(_$AppUser$ instance) => <String, dynamic>{
       'uid': instance.uid,
       'email': instance.email,
       'displayName': instance.displayName,
@@ -22,28 +21,19 @@ Map<String, dynamic> _$$AppUser$ToJson(_$AppUser$ instance) =>
     };
 
 _$AuthState$ _$$AuthState$FromJson(Map<String, dynamic> json) => _$AuthState$(
-      user: json['user'] == null
-          ? null
-          : AppUser.fromJson(json['user'] as Map<String, dynamic>),
+      user: json['user'] == null ? null : AppUser.fromJson(json['user'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$AuthState$ToJson(_$AuthState$ instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$$AuthState$ToJson(_$AuthState$ instance) => <String, dynamic>{
       'user': instance.user,
     };
 
 _$AppState$ _$$AppState$FromJson(Map<String, dynamic> json) => _$AppState$(
-      auth: json['auth'] == null
-          ? const AuthState()
-          : AuthState.fromJson(json['auth'] as Map<String, dynamic>),
-      pendingActions: (json['pendingActions'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toSet() ??
-          const <String>{},
+      auth: json['auth'] == null ? const AuthState() : AuthState.fromJson(json['auth'] as Map<String, dynamic>),
+      pendingActions: (json['pendingActions'] as List<dynamic>?)?.map((e) => e as String).toSet() ?? const <String>{},
     );
 
-Map<String, dynamic> _$$AppState$ToJson(_$AppState$ instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$$AppState$ToJson(_$AppState$ instance) => <String, dynamic>{
       'auth': instance.auth,
       'pendingActions': instance.pendingActions.toList(),
     };

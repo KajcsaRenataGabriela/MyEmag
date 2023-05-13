@@ -26,16 +26,14 @@ class _CreateUserPageState extends State<CreateUserPage> {
     if (password.length < 6) {
       return;
     }
-    StoreProvider.of<AppState>(context).dispatch(
-        CreateUserStart(email: email, password: password, result: _onResult));
+    StoreProvider.of<AppState>(context).dispatch(CreateUserStart(email: email, password: password, result: _onResult));
   }
 
   void _onResult(dynamic action) {
     if (action is CreateUserSuccessful) {
       Navigator.pushReplacementNamed(context, '/');
     } else if (action is CreateUserError) {
-      ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(content: Text('${action.error}')));
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('${action.error}')));
     }
   }
 

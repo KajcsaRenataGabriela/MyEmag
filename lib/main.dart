@@ -54,8 +54,7 @@ class MyApp extends StatelessWidget {
         ),
         routes: <String, WidgetBuilder>{
           '/': (BuildContext context) {
-            return UserContainer(
-                builder: (BuildContext context, AppUser? user) {
+            return UserContainer(builder: (BuildContext context, AppUser? user) {
               if (user == null) {
                 return const LoginPage();
               } else {

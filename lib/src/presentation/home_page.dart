@@ -16,8 +16,7 @@ class HomePage extends StatelessWidget {
           actions: <Widget>[
             IconButton(
                 onPressed: () {
-                  StoreProvider.of<AppState>(context)
-                      .dispatch(const LogoutUserStart());
+                  StoreProvider.of<AppState>(context).dispatch(const LogoutUserStart());
                   Navigator.pushReplacementNamed(context, '/login');
                 },
                 icon: const Icon(Icons.power_settings_new_sharp))
