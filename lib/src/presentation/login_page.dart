@@ -43,42 +43,45 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: PendingContainer(
-          builder: (BuildContext context, Set<String> pending) {
-            return Column(
-              children: <Widget>[
-                TextField(
-                  controller: _email,
-                  keyboardType: TextInputType.emailAddress,
-                  decoration: const InputDecoration(hintText: 'Email'),
-                ),
-                TextField(
-                  controller: _password,
-                  keyboardType: TextInputType.visiblePassword,
-                  obscureText: true,
-                  decoration: const InputDecoration(hintText: 'Password'),
-                ),
-                const SizedBox(height: 32.0),
-                if (pending.contains(CreateUser.pendingKey))
-                  const Center(
-                    child: CircularProgressIndicator(),
-                  )
-                else ...<Widget>[
-                  ElevatedButton(
-                    onPressed: _onNext,
-                    child: const Text('Login'),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: SafeArea(
+          child: PendingContainer(
+            builder: (BuildContext context, Set<String> pending) {
+              return Column(
+                children: <Widget>[
+                  TextField(
+                    controller: _email,
+                    keyboardType: TextInputType.emailAddress,
+                    decoration: const InputDecoration(hintText: 'Email'),
                   ),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.pushReplacementNamed(context, '/create');
-                    },
-                    child: const Text('Go to create'),
+                  TextField(
+                    controller: _password,
+                    keyboardType: TextInputType.visiblePassword,
+                    obscureText: true,
+                    decoration: const InputDecoration(hintText: 'Password'),
                   ),
-                ]
-              ],
-            );
-          },
+                  const SizedBox(height: 32.0),
+                  if (pending.contains(CreateUser.pendingKey))
+                    const Center(
+                      child: CircularProgressIndicator(),
+                    )
+                  else ...<Widget>[
+                    ElevatedButton(
+                      onPressed: _onNext,
+                      child: const Text('Login'),
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        Navigator.pushReplacementNamed(context, '/create');
+                      },
+                      child: const Text('Go to create'),
+                    ),
+                  ]
+                ],
+              );
+            },
+          ),
         ),
       ),
     );
