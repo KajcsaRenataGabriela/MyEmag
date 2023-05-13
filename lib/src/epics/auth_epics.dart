@@ -17,7 +17,7 @@ class AuthEpics implements EpicClass<AppState> {
       TypedEpic<AppState, LoginUserStart>(_loginUserStart).call,
       TypedEpic<AppState, CheckUserStart>(_checkUserStart).call,
       TypedEpic<AppState, LogoutUserStart>(_logoutUserStart).call,
-    ]) (actions, store);
+    ])(actions, store);
   }
 
   Stream<dynamic> _createUserStart(Stream<CreateUserStart> actions, EpicStore<AppState> store) {

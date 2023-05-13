@@ -53,11 +53,11 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.pink,
         ),
         routes: <String, WidgetBuilder>{
-          '/': (BuildContext context){
-            return UserContainer(builder: (BuildContext context, AppUser? user){
-              if(user == null){
+          '/': (BuildContext context) {
+            return UserContainer(builder: (BuildContext context, AppUser? user) {
+              if (user == null) {
                 return const LoginPage();
-              }else{
+              } else {
                 return const HomePage();
               }
             });

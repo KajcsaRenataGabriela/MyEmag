@@ -3,6 +3,7 @@ import 'package:flutter_redux/flutter_redux.dart';
 
 import '../actions/index.dart';
 import '../models/index.dart';
+import 'containers/index.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -43,31 +44,41 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          children: <Widget>[
-            TextField(
-              controller: _email,
-              keyboardType: TextInputType.emailAddress,
-              decoration: const InputDecoration(hintText: 'Email'),
-            ),
-            TextField(
-              controller: _password,
-              keyboardType: TextInputType.visiblePassword,
-              obscureText: true,
-              decoration: const InputDecoration(hintText: 'Password'),
-            ),
-            const SizedBox(height: 32.0),
-            ElevatedButton(
-              onPressed: _onNext,
-              child: const Text('Login'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushReplacementNamed(context, '/create');
-              },
-              child: const Text('Go to create'),
-            ),
-          ],
+        child: PendingContainer(
+          builder: (BuildContext context, Set<String> pending) {
+            return Column(
+              children: <Widget>[
+                TextField(
+                  controller: _email,
+                  keyboardType: TextInputType.emailAddress,
+                  decoration: const InputDecoration(hintText: 'Email'),
+                ),
+                TextField(
+                  controller: _password,
+                  keyboardType: TextInputType.visiblePassword,
+                  obscureText: true,
+                  decoration: const InputDecoration(hintText: 'Password'),
+                ),
+                const SizedBox(height: 32.0),
+                if (pending.contains(CreateUser.pendingKey))
+                  const Center(
+                    child: CircularProgressIndicator(),
+                  )
+                else ...<Widget>[
+                  ElevatedButton(
+                    onPressed: _onNext,
+                    child: const Text('Login'),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushReplacementNamed(context, '/create');
+                    },
+                    child: const Text('Go to create'),
+                  ),
+                ]
+              ],
+            );
+          },
         ),
       ),
     );

@@ -11,4 +11,12 @@ abstract class UserAction {
   AppUser? get user;
 }
 
+abstract class PendingAction {
+  String get pendingId;
+}
+
+abstract class StartAction implements PendingAction {}
+
+abstract class StopAction implements PendingAction {}
+
 typedef ActionResult = void Function(dynamic action);
