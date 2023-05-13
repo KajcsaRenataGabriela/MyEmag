@@ -6,5 +6,6 @@ class AuthState with _$AuthState {
     AppUser? user,
   }) = AuthState$;
 
-  factory AuthState.fromJson(Map<dynamic, dynamic> json) => _$AuthStateFromJson(Map<String, dynamic>.from(json));
+  factory AuthState.fromJson(Map<dynamic, dynamic> json) =>
+      _$AuthStateFromJson(Map<String, dynamic>.from(json));
 }
