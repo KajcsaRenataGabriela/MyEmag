@@ -4,14 +4,14 @@ import 'package:flutter_redux/flutter_redux.dart';
 import '../actions/index.dart';
 import '../models/index.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class CreateUserPage extends StatefulWidget {
+  const CreateUserPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<CreateUserPage> createState() => _CreateUserPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _CreateUserPageState extends State<CreateUserPage> {
   final TextEditingController _email = TextEditingController();
   final TextEditingController _password = TextEditingController();
 
@@ -25,17 +25,14 @@ class _LoginPageState extends State<LoginPage> {
     if (password.length < 6) {
       return;
     }
-    StoreProvider.of<AppState>(context).dispatch(LoginUserStart(email: email, password: password, result: _onResult));
+    StoreProvider.of<AppState>(context).dispatch(CreateUserStart(email: email, password: password, result: _onResult));
   }
 
   void _onResult(dynamic action) {
-    if (action is LoginUserSuccessful) {
+    if (action is CreateUserSuccessful) {
       Navigator.pushReplacementNamed(context, '/');
-    } else if (action is LoginUserError) {
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        content: Text('${action.error}'),
-        duration: const Duration(seconds: 5),
-      ));
+    } else if (action is CreateUserError) {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('${action.error}')));
     }
   }
 
@@ -52,20 +49,20 @@ class _LoginPageState extends State<LoginPage> {
             ),
             TextField(
               controller: _password,
-              keyboardType: TextInputType.visiblePassword,
               obscureText: true,
+              keyboardType: TextInputType.visiblePassword,
               decoration: const InputDecoration(hintText: 'Password'),
             ),
             const SizedBox(height: 32.0),
             ElevatedButton(
               onPressed: _onNext,
-              child: const Text('Login'),
+              child: const Text('Create'),
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushReplacementNamed(context, '/create');
+                Navigator.pushReplacementNamed(context, '/login');
               },
-              child: const Text('Go to create'),
+              child: const Text('Go to login'),
             ),
           ],
         ),

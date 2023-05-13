@@ -9,7 +9,7 @@ class AuthApi {
 
   Future<AppUser?> checkUser() async {
     final User? user = _auth.currentUser;
-    if(user == null){
+    if (user == null) {
       return null;
     }
 
@@ -42,5 +42,9 @@ class AuthApi {
       displayName: user.displayName ?? email.split('@').first,
       profileUrl: user.photoURL,
     );
+  }
+
+  Future<void> logOut() async {
+    await _auth.signOut();
   }
 }

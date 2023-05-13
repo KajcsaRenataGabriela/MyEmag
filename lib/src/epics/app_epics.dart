@@ -1,6 +1,5 @@
 import 'package:redux_epics/redux_epics.dart';
 
-import '../actions/index.dart';
 import '../models/index.dart';
 import 'auth_epics.dart';
 
@@ -12,11 +11,7 @@ class AppEpics implements EpicClass<AppState> {
   @override
   Stream<dynamic> call(Stream<dynamic> actions, EpicStore<AppState> store) {
     return combineEpics(<Epic<AppState>>[
-      TypedEpic<AppState, CreateUserStart>(_createUserStart).call,
+      _auth.call,
     ])(actions, store);
-  }
-
-  Stream<dynamic> _createUserStart(Stream<CreateUserStart> actions, EpicStore<AppState> store) {
-    return combineEpics<AppState>(<Epic<AppState>>[_auth.call])(actions, store);
   }
 }

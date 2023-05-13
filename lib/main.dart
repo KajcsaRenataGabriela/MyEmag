@@ -11,7 +11,10 @@ import 'src/data/auth_api.dart';
 import 'src/epics/app_epics.dart';
 import 'src/epics/auth_epics.dart';
 import 'src/models/index.dart';
+import 'src/presentation/containers/index.dart';
+import 'src/presentation/create_user_page.dart';
 import 'src/presentation/home_page.dart';
+import 'src/presentation/login_page.dart';
 import 'src/reducer/reducer.dart';
 
 Future<void> main() async {
@@ -49,7 +52,19 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.pink,
         ),
-        home: const HomePage(),
+        routes: <String, WidgetBuilder>{
+          '/': (BuildContext context){
+            return UserContainer(builder: (BuildContext context, AppUser? user){
+              if(user == null){
+                return const LoginPage();
+              }else{
+                return const HomePage();
+              }
+            });
+          },
+          '/login': (BuildContext context) => const LoginPage(),
+          '/create': (BuildContext context) => const CreateUserPage(),
+        },
       ),
     );
   }

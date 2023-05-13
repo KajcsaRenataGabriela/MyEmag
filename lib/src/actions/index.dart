@@ -4,8 +4,11 @@ import '../models/index.dart';
 part 'auth/create_user.dart';
 part 'auth/login_user.dart';
 part 'auth/check_user.dart';
+part 'auth/logout_user.dart';
 part 'index.freezed.dart';
 
 abstract class UserAction {
-  AppUser get user;
+  AppUser? get user;
 }
+
+typedef ActionResult = void Function(dynamic action);
