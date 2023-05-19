@@ -4,11 +4,12 @@ import 'package:redux/redux.dart';
 import '../actions/index.dart';
 import '../models/index.dart';
 import 'auth_reducer.dart';
+import 'products_reducer.dart';
 
 Reducer<AppState> reducer = combineReducers(<Reducer<AppState>>[
+  _reducer,
   TypedReducer<AppState, StartAction>(_startAction).call,
   TypedReducer<AppState, StopAction>(_stopAction).call,
-  _reducer
 ]);
 
 AppState _reducer(AppState state, dynamic action) {
@@ -22,6 +23,7 @@ AppState _reducer(AppState state, dynamic action) {
 
   return state.copyWith(
     auth: authReducer(state.auth, action),
+    products: productReducer(state.products, action),
   );
 }
 

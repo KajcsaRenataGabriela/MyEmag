@@ -1,31 +1,38 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:redux_epics/redux_epics.dart';
+import 'package:rxdart/transformers.dart';
 
+import '../actions/index.dart';
+import '../data/products_api.dart';
 import '../models/index.dart';
 
-class ProductsEpics {
-  ProductsEpics(this._firestore);
+class ProductsEpics implements EpicClass<AppState> {
+  ProductsEpics(this._api);
 
-  final FirebaseFirestore _firestore;
+  final ProductsApi _api;
 
-  Future<List<Category>> listCategory() async {
-    final QuerySnapshot<Map<String, dynamic>> snapshot = await _firestore.collection('categories').get();
-
-    return snapshot.docs
-        .map((QueryDocumentSnapshot<Map<String, dynamic>> doc) => Category.fromJson(doc.data())).toList();
+  @override
+  Stream<dynamic> call(Stream<dynamic> actions, EpicStore<AppState> store) {
+    return combineEpics(<Epic<AppState>>[
+      TypedEpic<AppState, ListCategoryStart>(_listCategoryStart).call,
+      TypedEpic<AppState, ListProductsStart>(_listProductsStart).call,
+    ])(actions, store);
   }
 
-  Future<List<Product>> listProducts() async {
-    final QuerySnapshot<Map<String, dynamic>> snapshot = await _firestore.collection('products').get();
-
-    return snapshot.docs
-        .map((QueryDocumentSnapshot<Map<String, dynamic>> doc) => Product.fromJson(doc.data())).toList();
+  Stream<dynamic> _listCategoryStart(Stream<ListCategoryStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((ListCategoryStart action) {
+      return Stream<void>.value(null).asyncMap((_) => _api.listCategory()).expand((List<Category> categories) {
+        final List<Category> list = categories..sort();
+        return <dynamic>[ListCategory.successful(list), ListProducts.start(list.first.id)];
+      }).onErrorReturnWith((Object error, StackTrace stackTrace) => ListCategoryError(error, stackTrace));
+    });
   }
 
-  Future<List<Vendor>> listVendors() async {
-    final QuerySnapshot<Map<String, dynamic>> snapshot = await _firestore.collection('vendors').get();
-
-    return snapshot.docs
-        .map((QueryDocumentSnapshot<Map<String, dynamic>> doc) => Vendor.fromJson(doc.data())).toList();
+  Stream<dynamic> _listProductsStart(Stream<ListProductsStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((ListProductsStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => _api.listProducts(action.categoryId))
+          .map((List<Product> products) => ListProducts.successful(products))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => ListProductsError(error, stackTrace));
+    });
   }
-
 }

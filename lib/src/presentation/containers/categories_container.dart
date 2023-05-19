@@ -1,14 +1,14 @@
 part of 'index.dart';
 
-class UserContainer extends StatelessWidget {
-  const UserContainer({super.key, required this.builder});
+class CategoriesContainer extends StatelessWidget {
+  const CategoriesContainer({super.key, required this.builder});
 
-  final ViewModelBuilder<AppUser?> builder;
+  final ViewModelBuilder<List<Category>> builder;
 
   @override
   Widget build(BuildContext context) {
-    return StoreConnector<AppState, AppUser?>(
-      converter: (Store<AppState> store) => store.state.auth.user,
+    return StoreConnector<AppState, List<Category>>(
+      converter: (Store<AppState> store) => store.state.products.categories,
       builder: builder,
     );
   }

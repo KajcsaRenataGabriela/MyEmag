@@ -1,14 +1,17 @@
 part of 'index.dart';
 
-class CategoriesContainer extends StatelessWidget {
-  const CategoriesContainer({super.key, required this.builder});
+class SelectedCategoryContainer extends StatelessWidget {
+  const SelectedCategoryContainer({super.key, required this.builder});
 
-  final ViewModelBuilder<List<Category>> builder;
+  final ViewModelBuilder<Category> builder;
 
   @override
   Widget build(BuildContext context) {
-    return StoreConnector<ProductsState, List<Category>>(
-      converter: (Store<ProductsState> store) => store.state.categories,
+    return StoreConnector<AppState, Category>(
+      converter: (Store<AppState> store) {
+        return store.state.products.categories
+            .firstWhere((Category category) => category.id == store.state.products.selectedCategoryId);
+      },
       builder: builder,
     );
   }

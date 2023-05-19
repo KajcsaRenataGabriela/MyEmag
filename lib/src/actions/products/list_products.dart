@@ -1,23 +1,27 @@
 part of '../index.dart';
 
-const String _kListCategoryPendingId = 'ListCategory';
+const String _kListProductsPendingId = 'ListProducts';
 
 @freezed
-class ListCategory with _$ListCategory implements {
+class ListProducts with _$ListProducts {
   @Implements<StartAction>()
-  const factory ListCategory.start({
-    @Default(_kListCategoryPendingId) String pendingId,
-  }) = ListCategoryStart;
+  const factory ListProducts.start(
+    String categoryId, {
+    @Default(_kListProductsPendingId) String pendingId,
+  }) = ListProductsStart;
 
   @Implements<StopAction>()
-  const factory ListCategory.successful(List<Category> categories, [
-    @Default(_kListCategoryPendingId) String pendingId,
-  ]) = ListCategorySuccessful;
+  const factory ListProducts.successful(
+    List<Product> products, [
+    @Default(_kListProductsPendingId) String pendingId,
+  ]) = ListProductsSuccessful;
 
   @Implements<StopAction>()
-  const factory ListCategory.error(Object error, StackTrace stackTrace, [
-    @Default(_kListCategoryPendingId) String pendingId,
-  ]) = ListCategoryError;
+  const factory ListProducts.error(
+    Object error,
+    StackTrace stackTrace, [
+    @Default(_kListProductsPendingId) String pendingId,
+  ]) = ListProductsError;
 
-  static String get pendingKey => _kListCategoryPendingId;
+  static String get pendingKey => _kListProductsPendingId;
 }

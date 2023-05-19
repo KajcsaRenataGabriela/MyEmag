@@ -1,11 +1,16 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../models/index.dart';
+
+part 'auth/check_user.dart';
 part 'auth/create_user.dart';
 part 'auth/login_user.dart';
-part 'auth/check_user.dart';
 part 'auth/logout_user.dart';
 part 'index.freezed.dart';
+part 'products/list_category.dart';
+part 'products/list_products.dart';
+part 'products/list_vendors.dart';
+part 'products/set.dart';
 
 abstract class UserAction {
   AppUser? get user;
