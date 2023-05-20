@@ -338,6 +338,7 @@ mixin _$ProductsState {
   List<Category> get categories => throw _privateConstructorUsedError;
   List<Vendor> get vendors => throw _privateConstructorUsedError;
   String? get selectedCategoryId => throw _privateConstructorUsedError;
+  String? get selectedProductId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -349,7 +350,12 @@ abstract class $ProductsStateCopyWith<$Res> {
   factory $ProductsStateCopyWith(ProductsState value, $Res Function(ProductsState) then) =
       _$ProductsStateCopyWithImpl<$Res, ProductsState>;
   @useResult
-  $Res call({List<Product> products, List<Category> categories, List<Vendor> vendors, String? selectedCategoryId});
+  $Res call(
+      {List<Product> products,
+      List<Category> categories,
+      List<Vendor> vendors,
+      String? selectedCategoryId,
+      String? selectedProductId});
 }
 
 /// @nodoc
@@ -368,6 +374,7 @@ class _$ProductsStateCopyWithImpl<$Res, $Val extends ProductsState> implements $
     Object? categories = null,
     Object? vendors = null,
     Object? selectedCategoryId = freezed,
+    Object? selectedProductId = freezed,
   }) {
     return _then(_value.copyWith(
       products: null == products
@@ -386,6 +393,10 @@ class _$ProductsStateCopyWithImpl<$Res, $Val extends ProductsState> implements $
           ? _value.selectedCategoryId
           : selectedCategoryId // ignore: cast_nullable_to_non_nullable
               as String?,
+      selectedProductId: freezed == selectedProductId
+          ? _value.selectedProductId
+          : selectedProductId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -396,7 +407,12 @@ abstract class _$$ProductsState$CopyWith<$Res> implements $ProductsStateCopyWith
       __$$ProductsState$CopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<Product> products, List<Category> categories, List<Vendor> vendors, String? selectedCategoryId});
+  $Res call(
+      {List<Product> products,
+      List<Category> categories,
+      List<Vendor> vendors,
+      String? selectedCategoryId,
+      String? selectedProductId});
 }
 
 /// @nodoc
@@ -411,6 +427,7 @@ class __$$ProductsState$CopyWithImpl<$Res> extends _$ProductsStateCopyWithImpl<$
     Object? categories = null,
     Object? vendors = null,
     Object? selectedCategoryId = freezed,
+    Object? selectedProductId = freezed,
   }) {
     return _then(_$ProductsState$(
       products: null == products
@@ -429,6 +446,10 @@ class __$$ProductsState$CopyWithImpl<$Res> extends _$ProductsStateCopyWithImpl<$
           ? _value.selectedCategoryId
           : selectedCategoryId // ignore: cast_nullable_to_non_nullable
               as String?,
+      selectedProductId: freezed == selectedProductId
+          ? _value.selectedProductId
+          : selectedProductId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -440,7 +461,8 @@ class _$ProductsState$ implements ProductsState$ {
       {final List<Product> products = const <Product>[],
       final List<Category> categories = const <Category>[],
       final List<Vendor> vendors = const <Vendor>[],
-      this.selectedCategoryId})
+      this.selectedCategoryId,
+      this.selectedProductId})
       : _products = products,
         _categories = categories,
         _vendors = vendors;
@@ -476,10 +498,12 @@ class _$ProductsState$ implements ProductsState$ {
 
   @override
   final String? selectedCategoryId;
+  @override
+  final String? selectedProductId;
 
   @override
   String toString() {
-    return 'ProductsState(products: $products, categories: $categories, vendors: $vendors, selectedCategoryId: $selectedCategoryId)';
+    return 'ProductsState(products: $products, categories: $categories, vendors: $vendors, selectedCategoryId: $selectedCategoryId, selectedProductId: $selectedProductId)';
   }
 
   @override
@@ -491,7 +515,8 @@ class _$ProductsState$ implements ProductsState$ {
             const DeepCollectionEquality().equals(other._categories, _categories) &&
             const DeepCollectionEquality().equals(other._vendors, _vendors) &&
             (identical(other.selectedCategoryId, selectedCategoryId) ||
-                other.selectedCategoryId == selectedCategoryId));
+                other.selectedCategoryId == selectedCategoryId) &&
+            (identical(other.selectedProductId, selectedProductId) || other.selectedProductId == selectedProductId));
   }
 
   @JsonKey(ignore: true)
@@ -501,7 +526,8 @@ class _$ProductsState$ implements ProductsState$ {
       const DeepCollectionEquality().hash(_products),
       const DeepCollectionEquality().hash(_categories),
       const DeepCollectionEquality().hash(_vendors),
-      selectedCategoryId);
+      selectedCategoryId,
+      selectedProductId);
 
   @JsonKey(ignore: true)
   @override
@@ -522,7 +548,8 @@ abstract class ProductsState$ implements ProductsState {
       {final List<Product> products,
       final List<Category> categories,
       final List<Vendor> vendors,
-      final String? selectedCategoryId}) = _$ProductsState$;
+      final String? selectedCategoryId,
+      final String? selectedProductId}) = _$ProductsState$;
 
   factory ProductsState$.fromJson(Map<String, dynamic> json) = _$ProductsState$.fromJson;
 
@@ -534,6 +561,8 @@ abstract class ProductsState$ implements ProductsState {
   List<Vendor> get vendors;
   @override
   String? get selectedCategoryId;
+  @override
+  String? get selectedProductId;
   @override
   @JsonKey(ignore: true)
   _$$ProductsState$CopyWith<_$ProductsState$> get copyWith => throw _privateConstructorUsedError;

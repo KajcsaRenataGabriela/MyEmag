@@ -23,11 +23,10 @@ class ProductsApi {
         .map((QueryDocumentSnapshot<Map<String, dynamic>> doc) => Product.fromJson(doc.data()))
         .toList();
   }
-  //
-  // Future<List<Vendor>> listVendors() async {
-  //   final QuerySnapshot<Map<String, dynamic>> snapshot = await _firestore.collection('vendors').get();
-  //
-  //   return snapshot.docs
-  //       .map((QueryDocumentSnapshot<Map<String, dynamic>> doc) => Vendor.fromJson(doc.data())).toList();
-  // }
+
+  Future<List<Vendor>> listVendors() async {
+    final QuerySnapshot<Map<String, dynamic>> snapshot = await _firestore.collection('vendors').get();
+
+    return snapshot.docs.map((QueryDocumentSnapshot<Map<String, dynamic>> doc) => Vendor.fromJson(doc.data())).toList();
+  }
 }

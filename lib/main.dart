@@ -18,6 +18,7 @@ import 'src/presentation/containers/index.dart';
 import 'src/presentation/create_user_page.dart';
 import 'src/presentation/home_page.dart';
 import 'src/presentation/login_page.dart';
+import 'src/presentation/product_page.dart';
 import 'src/reducer/reducer.dart';
 
 Future<void> main() async {
@@ -39,7 +40,7 @@ Future<void> main() async {
     ],
   );
 
-  store.dispatch(const CheckUserStart());
+  store.dispatch(const InitializeApp.start());
 
   runApp(MyApp(store: store));
 }
@@ -70,6 +71,7 @@ class MyApp extends StatelessWidget {
           },
           '/login': (BuildContext context) => const LoginPage(),
           '/create': (BuildContext context) => const CreateUserPage(),
+          '/product': (BuildContext context) => const ProductPage(),
         },
       ),
     );

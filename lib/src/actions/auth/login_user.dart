@@ -15,9 +15,7 @@ class LoginUser with _$LoginUser {
   const factory LoginUser.cancel() = LoginUserCancel;
 
   @Implements<StopAction>()
-  @Implements<UserAction>()
-  const factory LoginUser.successful(
-    AppUser user, [
+  const factory LoginUser.successful([
     @Default(_kLoginUserPendingId) String pendingId,
   ]) = LoginUserSuccessful;
 

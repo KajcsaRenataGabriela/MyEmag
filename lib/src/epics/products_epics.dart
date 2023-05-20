@@ -15,6 +15,7 @@ class ProductsEpics implements EpicClass<AppState> {
     return combineEpics(<Epic<AppState>>[
       TypedEpic<AppState, ListCategoryStart>(_listCategoryStart).call,
       TypedEpic<AppState, ListProductsStart>(_listProductsStart).call,
+      TypedEpic<AppState, ListVendorsStart>(_listVendorsStart).call,
     ])(actions, store);
   }
 
@@ -33,6 +34,15 @@ class ProductsEpics implements EpicClass<AppState> {
           .asyncMap((_) => _api.listProducts(action.categoryId))
           .map((List<Product> products) => ListProducts.successful(products))
           .onErrorReturnWith((Object error, StackTrace stackTrace) => ListProductsError(error, stackTrace));
+    });
+  }
+
+  Stream<dynamic> _listVendorsStart(Stream<ListVendorsStart> actions, EpicStore<AppState> store) {
+    return actions.flatMap((ListVendorsStart action) {
+      return Stream<void>.value(null)
+          .asyncMap((_) => _api.listVendors())
+          .map((List<Vendor> vendors) => ListVendors.successful(vendors))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => ListVendorsError(error, stackTrace));
     });
   }
 }

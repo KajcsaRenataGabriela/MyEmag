@@ -7,41 +7,26 @@ class AuthApi {
 
   final FirebaseAuth _auth;
 
-  Future<AppUser?> checkUser() async {
-    final User? user = _auth.currentUser;
-    if (user == null) {
-      return null;
-    }
-
-    return AppUser(
-      uid: user.uid,
-      email: user.email!,
-      displayName: user.displayName ?? user.email!.split('@').first,
-      profileUrl: user.photoURL,
-    );
+  Stream<AppUser?> currentUser() {
+    return _auth.userChanges().map((User? user) {
+      if (user == null) {
+        return null;
+      }
+      return AppUser(
+        uid: user.uid,
+        email: user.email!,
+        displayName: user.displayName ?? user.email!.split('@').first,
+        profileUrl: user.photoURL,
+      );
+    }).distinct();
   }
 
-  Future<AppUser> createUser({required String email, required String password}) async {
-    final UserCredential credential = await _auth.createUserWithEmailAndPassword(email: email, password: password);
-    final User user = credential.user!;
-
-    return AppUser(
-      uid: user.uid,
-      email: email,
-      displayName: email.split('@').first,
-    );
+  Future<void> createUser({required String email, required String password}) async {
+    await _auth.createUserWithEmailAndPassword(email: email, password: password);
   }
 
-  Future<AppUser> loginUser({required String email, required String password}) async {
-    final UserCredential credential = await _auth.signInWithEmailAndPassword(email: email, password: password);
-    final User user = credential.user!;
-
-    return AppUser(
-      uid: user.uid,
-      email: email,
-      displayName: user.displayName ?? email.split('@').first,
-      profileUrl: user.photoURL,
-    );
+  Future<void> loginUser({required String email, required String password}) async {
+    await _auth.signInWithEmailAndPassword(email: email, password: password);
   }
 
   Future<void> logOut() async {

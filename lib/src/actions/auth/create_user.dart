@@ -13,9 +13,7 @@ class CreateUser with _$CreateUser {
   }) = CreateUserStart;
 
   @Implements<StopAction>()
-  @Implements<UserAction>()
-  const factory CreateUser.successful(
-    AppUser user, [
+  const factory CreateUser.successful([
     @Default(_kCreateUserPendingId) String pendingId,
   ]) = CreateUserSuccessful;
 

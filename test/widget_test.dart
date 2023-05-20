@@ -37,7 +37,7 @@ void main() {
       ],
     );
 
-    store.dispatch(const CheckUserStart());
+    store.dispatch(const InitializeApp.start());
     await tester.pumpWidget(MyApp(
       store: store,
     ));

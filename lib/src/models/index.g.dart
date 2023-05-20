@@ -38,6 +38,7 @@ _$ProductsState$ _$$ProductsState$FromJson(Map<String, dynamic> json) => _$Produ
       vendors: (json['vendors'] as List<dynamic>?)?.map((e) => Vendor.fromJson(e as Map<String, dynamic>)).toList() ??
           const <Vendor>[],
       selectedCategoryId: json['selectedCategoryId'] as String?,
+      selectedProductId: json['selectedProductId'] as String?,
     );
 
 Map<String, dynamic> _$$ProductsState$ToJson(_$ProductsState$ instance) => <String, dynamic>{
@@ -45,6 +46,7 @@ Map<String, dynamic> _$$ProductsState$ToJson(_$ProductsState$ instance) => <Stri
       'categories': instance.categories,
       'vendors': instance.vendors,
       'selectedCategoryId': instance.selectedCategoryId,
+      'selectedProductId': instance.selectedProductId,
     };
 
 _$Product$ _$$Product$FromJson(Map<String, dynamic> json) => _$Product$(

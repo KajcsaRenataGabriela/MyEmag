@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 
@@ -58,28 +59,35 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
           ),
-          body: ProductsContainer(
-            builder: (BuildContext context, List<Product> products) {
-              return ListView.separated(
-                  itemBuilder: (BuildContext context, int index) {
-                    final Product product = products[index];
-                    return ListTile(
-                      leading: CachedNetworkImage(
-                        imageUrl: product.image,
-                        fit: BoxFit.cover,
-                        width: 56.0,
-                        height: 56.0,
-                      ),
-                      title: Text(product.title),
-                      subtitle: Text(product.description),
-                    );
-                  },
-                  separatorBuilder: (BuildContext context, int index) {
-                    return const Divider();
-                  },
-                  itemCount: products.length);
-            },
-          ),
+          body: VendorsContainer(builder: (BuildContext context, List<Vendor> vendors) {
+            return ProductsContainer(
+              builder: (BuildContext context, List<Product> products) {
+                return ListView.separated(
+                    itemBuilder: (BuildContext context, int index) {
+                      final Product product = products[index];
+                      final Vendor? vendor = vendors.firstWhereOrNull((Vendor vendor) => vendor.id == product.vendorId);
+                      return ListTile(
+                        leading: CachedNetworkImage(
+                          imageUrl: product.image,
+                          fit: BoxFit.cover,
+                          width: 56.0,
+                          height: 56.0,
+                        ),
+                        title: Text('${product.title}${vendor == null ? '' : '/ ${vendor.name}'}'),
+                        subtitle: Text(product.description),
+                        onTap: () {
+                          StoreProvider.of<AppState>(context).dispatch(SetProduct(product.id));
+                          Navigator.pushNamed(context, '/product');
+                        },
+                      );
+                    },
+                    separatorBuilder: (BuildContext context, int index) {
+                      return const Divider();
+                    },
+                    itemCount: products.length);
+              },
+            );
+          }),
         );
       });
     });
