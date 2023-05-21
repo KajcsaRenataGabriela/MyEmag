@@ -14,7 +14,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return UserContainer(builder: (BuildContext context, AppUser? user) {
       return CategoriesContainer(builder: (BuildContext context, List<Category> categories) {
-        return ProductsContainer(builder: (BuildContext context, List<Product> products) {
+        return HomeProductsContainer(builder: (BuildContext context, List<Product> products) {
           return Scaffold(
             appBar: AppBar(
               actions: <Widget>[

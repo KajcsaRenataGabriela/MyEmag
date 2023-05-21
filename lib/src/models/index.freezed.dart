@@ -627,7 +627,8 @@ ProductsState _$ProductsStateFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ProductsState {
-  List<Product> get products => throw _privateConstructorUsedError;
+  Map<String, Product> get products => throw _privateConstructorUsedError;
+  List<String> get productIds => throw _privateConstructorUsedError;
   List<Category> get categories => throw _privateConstructorUsedError;
   List<Vendor> get vendors => throw _privateConstructorUsedError;
   String? get selectedCategoryId => throw _privateConstructorUsedError;
@@ -644,7 +645,8 @@ abstract class $ProductsStateCopyWith<$Res> {
       _$ProductsStateCopyWithImpl<$Res, ProductsState>;
   @useResult
   $Res call(
-      {List<Product> products,
+      {Map<String, Product> products,
+      List<String> productIds,
       List<Category> categories,
       List<Vendor> vendors,
       String? selectedCategoryId,
@@ -664,6 +666,7 @@ class _$ProductsStateCopyWithImpl<$Res, $Val extends ProductsState> implements $
   @override
   $Res call({
     Object? products = null,
+    Object? productIds = null,
     Object? categories = null,
     Object? vendors = null,
     Object? selectedCategoryId = freezed,
@@ -673,7 +676,11 @@ class _$ProductsStateCopyWithImpl<$Res, $Val extends ProductsState> implements $
       products: null == products
           ? _value.products
           : products // ignore: cast_nullable_to_non_nullable
-              as List<Product>,
+              as Map<String, Product>,
+      productIds: null == productIds
+          ? _value.productIds
+          : productIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       categories: null == categories
           ? _value.categories
           : categories // ignore: cast_nullable_to_non_nullable
@@ -701,7 +708,8 @@ abstract class _$$ProductsState$CopyWith<$Res> implements $ProductsStateCopyWith
   @override
   @useResult
   $Res call(
-      {List<Product> products,
+      {Map<String, Product> products,
+      List<String> productIds,
       List<Category> categories,
       List<Vendor> vendors,
       String? selectedCategoryId,
@@ -717,6 +725,7 @@ class __$$ProductsState$CopyWithImpl<$Res> extends _$ProductsStateCopyWithImpl<$
   @override
   $Res call({
     Object? products = null,
+    Object? productIds = null,
     Object? categories = null,
     Object? vendors = null,
     Object? selectedCategoryId = freezed,
@@ -726,7 +735,11 @@ class __$$ProductsState$CopyWithImpl<$Res> extends _$ProductsStateCopyWithImpl<$
       products: null == products
           ? _value._products
           : products // ignore: cast_nullable_to_non_nullable
-              as List<Product>,
+              as Map<String, Product>,
+      productIds: null == productIds
+          ? _value._productIds
+          : productIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       categories: null == categories
           ? _value._categories
           : categories // ignore: cast_nullable_to_non_nullable
@@ -751,24 +764,35 @@ class __$$ProductsState$CopyWithImpl<$Res> extends _$ProductsStateCopyWithImpl<$
 @JsonSerializable()
 class _$ProductsState$ implements ProductsState$ {
   const _$ProductsState$(
-      {final List<Product> products = const <Product>[],
+      {final Map<String, Product> products = const <String, Product>{},
+      final List<String> productIds = const <String>[],
       final List<Category> categories = const <Category>[],
       final List<Vendor> vendors = const <Vendor>[],
       this.selectedCategoryId,
       this.selectedProductId})
       : _products = products,
+        _productIds = productIds,
         _categories = categories,
         _vendors = vendors;
 
   factory _$ProductsState$.fromJson(Map<String, dynamic> json) => _$$ProductsState$FromJson(json);
 
-  final List<Product> _products;
+  final Map<String, Product> _products;
   @override
   @JsonKey()
-  List<Product> get products {
-    if (_products is EqualUnmodifiableListView) return _products;
+  Map<String, Product> get products {
+    if (_products is EqualUnmodifiableMapView) return _products;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_products);
+    return EqualUnmodifiableMapView(_products);
+  }
+
+  final List<String> _productIds;
+  @override
+  @JsonKey()
+  List<String> get productIds {
+    if (_productIds is EqualUnmodifiableListView) return _productIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_productIds);
   }
 
   final List<Category> _categories;
@@ -796,7 +820,7 @@ class _$ProductsState$ implements ProductsState$ {
 
   @override
   String toString() {
-    return 'ProductsState(products: $products, categories: $categories, vendors: $vendors, selectedCategoryId: $selectedCategoryId, selectedProductId: $selectedProductId)';
+    return 'ProductsState(products: $products, productIds: $productIds, categories: $categories, vendors: $vendors, selectedCategoryId: $selectedCategoryId, selectedProductId: $selectedProductId)';
   }
 
   @override
@@ -805,6 +829,7 @@ class _$ProductsState$ implements ProductsState$ {
         (other.runtimeType == runtimeType &&
             other is _$ProductsState$ &&
             const DeepCollectionEquality().equals(other._products, _products) &&
+            const DeepCollectionEquality().equals(other._productIds, _productIds) &&
             const DeepCollectionEquality().equals(other._categories, _categories) &&
             const DeepCollectionEquality().equals(other._vendors, _vendors) &&
             (identical(other.selectedCategoryId, selectedCategoryId) ||
@@ -817,6 +842,7 @@ class _$ProductsState$ implements ProductsState$ {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_products),
+      const DeepCollectionEquality().hash(_productIds),
       const DeepCollectionEquality().hash(_categories),
       const DeepCollectionEquality().hash(_vendors),
       selectedCategoryId,
@@ -838,7 +864,8 @@ class _$ProductsState$ implements ProductsState$ {
 
 abstract class ProductsState$ implements ProductsState {
   const factory ProductsState$(
-      {final List<Product> products,
+      {final Map<String, Product> products,
+      final List<String> productIds,
       final List<Category> categories,
       final List<Vendor> vendors,
       final String? selectedCategoryId,
@@ -847,7 +874,9 @@ abstract class ProductsState$ implements ProductsState {
   factory ProductsState$.fromJson(Map<String, dynamic> json) = _$ProductsState$.fromJson;
 
   @override
-  List<Product> get products;
+  Map<String, Product> get products;
+  @override
+  List<String> get productIds;
   @override
   List<Category> get categories;
   @override

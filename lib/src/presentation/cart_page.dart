@@ -12,9 +12,9 @@ class CartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CartContainer(builder: (BuildContext context, Cart cart) {
-      return ProductsContainer(builder: (BuildContext context, List<Product> products) {
+      return ProductsContainer(builder: (BuildContext context, Map<String, Product> products) {
         final double total = cart.items.fold(0.0, (double sum, CartItem item) {
-          final Product product = products.firstWhere((Product product) => product.id == item.productId);
+          final Product product = products[item.productId]!;
           return sum + product.price * item.quantity;
         });
         final int totalNumberOfItems = cart.items.fold(0, (int sum, CartItem item) {
@@ -43,8 +43,7 @@ class CartPage extends StatelessWidget {
                             itemCount: cart.items.length,
                             itemBuilder: (BuildContext context, int index) {
                               final CartItem item = cart.items[index];
-                              final Product product =
-                                  products.firstWhere((Product product) => product.id == item.productId);
+                              final Product product = products[item.productId]!;
                               return Column(
                                 children: <Widget>[
                                   ListTile(

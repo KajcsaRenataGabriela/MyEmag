@@ -24,7 +24,9 @@ ProductsState _setProduct(ProductsState state, SetProduct action) {
 }
 
 ProductsState _listProductsSuccessful(ProductsState state, ListProductsSuccessful action) {
-  return state.copyWith(products: action.products);
+  return state.copyWith(
+      products: <String, Product>{...state.products, for (final Product item in action.products) item.id: item},
+      productIds: action.products.map((Product product) => product.id).toList());
 }
 
 ProductsState _listVendorsSuccessful(ProductsState state, ListVendorsSuccessful action) {

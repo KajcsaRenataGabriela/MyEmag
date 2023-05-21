@@ -50,9 +50,11 @@ Map<String, dynamic> _$$CartItem$ToJson(_$CartItem$ instance) => <String, dynami
     };
 
 _$ProductsState$ _$$ProductsState$FromJson(Map<String, dynamic> json) => _$ProductsState$(
-      products:
-          (json['products'] as List<dynamic>?)?.map((e) => Product.fromJson(e as Map<String, dynamic>)).toList() ??
-              const <Product>[],
+      products: (json['products'] as Map<String, dynamic>?)?.map(
+            (k, e) => MapEntry(k, Product.fromJson(e as Map<String, dynamic>)),
+          ) ??
+          const <String, Product>{},
+      productIds: (json['productIds'] as List<dynamic>?)?.map((e) => e as String).toList() ?? const <String>[],
       categories:
           (json['categories'] as List<dynamic>?)?.map((e) => Category.fromJson(e as Map<String, dynamic>)).toList() ??
               const <Category>[],
@@ -64,6 +66,7 @@ _$ProductsState$ _$$ProductsState$FromJson(Map<String, dynamic> json) => _$Produ
 
 Map<String, dynamic> _$$ProductsState$ToJson(_$ProductsState$ instance) => <String, dynamic>{
       'products': instance.products,
+      'productIds': instance.productIds,
       'categories': instance.categories,
       'vendors': instance.vendors,
       'selectedCategoryId': instance.selectedCategoryId,
