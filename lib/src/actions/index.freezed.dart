@@ -2087,6 +2087,131 @@ abstract class InitializeAppError implements InitializeApp {
 }
 
 /// @nodoc
+mixin _$UpdateCart {
+  String get productId => throw _privateConstructorUsedError;
+  bool get add => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $UpdateCartCopyWith<UpdateCart> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UpdateCartCopyWith<$Res> {
+  factory $UpdateCartCopyWith(UpdateCart value, $Res Function(UpdateCart) then) =
+      _$UpdateCartCopyWithImpl<$Res, UpdateCart>;
+  @useResult
+  $Res call({String productId, bool add});
+}
+
+/// @nodoc
+class _$UpdateCartCopyWithImpl<$Res, $Val extends UpdateCart> implements $UpdateCartCopyWith<$Res> {
+  _$UpdateCartCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? productId = null,
+    Object? add = null,
+  }) {
+    return _then(_value.copyWith(
+      productId: null == productId
+          ? _value.productId
+          : productId // ignore: cast_nullable_to_non_nullable
+              as String,
+      add: null == add
+          ? _value.add
+          : add // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$UpdateCartStartCopyWith<$Res> implements $UpdateCartCopyWith<$Res> {
+  factory _$$UpdateCartStartCopyWith(_$UpdateCartStart value, $Res Function(_$UpdateCartStart) then) =
+      __$$UpdateCartStartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String productId, bool add});
+}
+
+/// @nodoc
+class __$$UpdateCartStartCopyWithImpl<$Res> extends _$UpdateCartCopyWithImpl<$Res, _$UpdateCartStart>
+    implements _$$UpdateCartStartCopyWith<$Res> {
+  __$$UpdateCartStartCopyWithImpl(_$UpdateCartStart _value, $Res Function(_$UpdateCartStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? productId = null,
+    Object? add = null,
+  }) {
+    return _then(_$UpdateCartStart(
+      null == productId
+          ? _value.productId
+          : productId // ignore: cast_nullable_to_non_nullable
+              as String,
+      add: null == add
+          ? _value.add
+          : add // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateCartStart implements UpdateCartStart {
+  const _$UpdateCartStart(this.productId, {required this.add});
+
+  @override
+  final String productId;
+  @override
+  final bool add;
+
+  @override
+  String toString() {
+    return 'UpdateCart(productId: $productId, add: $add)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateCartStart &&
+            (identical(other.productId, productId) || other.productId == productId) &&
+            (identical(other.add, add) || other.add == add));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, productId, add);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateCartStartCopyWith<_$UpdateCartStart> get copyWith =>
+      __$$UpdateCartStartCopyWithImpl<_$UpdateCartStart>(this, _$identity);
+}
+
+abstract class UpdateCartStart implements UpdateCart {
+  const factory UpdateCartStart(final String productId, {required final bool add}) = _$UpdateCartStart;
+
+  @override
+  String get productId;
+  @override
+  bool get add;
+  @override
+  @JsonKey(ignore: true)
+  _$$UpdateCartStartCopyWith<_$UpdateCartStart> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$ListCategory {
   String get pendingId => throw _privateConstructorUsedError;
   @optionalTypeArgs

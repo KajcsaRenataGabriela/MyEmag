@@ -22,10 +22,31 @@ Map<String, dynamic> _$$AppUser$ToJson(_$AppUser$ instance) => <String, dynamic>
 
 _$AuthState$ _$$AuthState$FromJson(Map<String, dynamic> json) => _$AuthState$(
       user: json['user'] == null ? null : AppUser.fromJson(json['user'] as Map<String, dynamic>),
+      cart: json['cart'] == null ? const Cart() : Cart.fromJson(json['cart'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$AuthState$ToJson(_$AuthState$ instance) => <String, dynamic>{
       'user': instance.user,
+      'cart': instance.cart,
+    };
+
+_$Cart$ _$$Cart$FromJson(Map<String, dynamic> json) => _$Cart$(
+      items: (json['items'] as List<dynamic>?)?.map((e) => CartItem.fromJson(e as Map<String, dynamic>)).toList() ??
+          const <CartItem>[],
+    );
+
+Map<String, dynamic> _$$Cart$ToJson(_$Cart$ instance) => <String, dynamic>{
+      'items': instance.items,
+    };
+
+_$CartItem$ _$$CartItem$FromJson(Map<String, dynamic> json) => _$CartItem$(
+      productId: json['productId'] as String,
+      quantity: json['quantity'] as int,
+    );
+
+Map<String, dynamic> _$$CartItem$ToJson(_$CartItem$ instance) => <String, dynamic>{
+      'productId': instance.productId,
+      'quantity': instance.quantity,
     };
 
 _$ProductsState$ _$$ProductsState$FromJson(Map<String, dynamic> json) => _$ProductsState$(

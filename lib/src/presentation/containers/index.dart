@@ -11,3 +11,4 @@ part 'selected_category_container.dart';
 part 'selected_product_container.dart';
 part 'products_container.dart';
 part 'vendors_container.dart';
+part 'cart_container.dart';

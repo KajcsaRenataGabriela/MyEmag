@@ -6,6 +6,7 @@ part 'auth/create_user.dart';
 part 'auth/login_user.dart';
 part 'auth/logout_user.dart';
 part 'auth/initialize_app.dart';
+part 'auth/update_cart.dart';
 part 'index.freezed.dart';
 part 'products/list_category.dart';
 part 'products/list_products.dart';

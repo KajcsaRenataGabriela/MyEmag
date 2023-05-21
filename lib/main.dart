@@ -14,6 +14,7 @@ import 'src/epics/app_epics.dart';
 import 'src/epics/auth_epics.dart';
 import 'src/epics/products_epics.dart';
 import 'src/models/index.dart';
+import 'src/presentation/cart_page.dart';
 import 'src/presentation/containers/index.dart';
 import 'src/presentation/create_user_page.dart';
 import 'src/presentation/home_page.dart';
@@ -72,6 +73,7 @@ class MyApp extends StatelessWidget {
           '/login': (BuildContext context) => const LoginPage(),
           '/create': (BuildContext context) => const CreateUserPage(),
           '/product': (BuildContext context) => const ProductPage(),
+          '/cart': (BuildContext context) => const CartPage(),
         },
       ),
     );

@@ -195,6 +195,7 @@ AuthState _$AuthStateFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$AuthState {
   AppUser? get user => throw _privateConstructorUsedError;
+  Cart get cart => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -205,9 +206,10 @@ mixin _$AuthState {
 abstract class $AuthStateCopyWith<$Res> {
   factory $AuthStateCopyWith(AuthState value, $Res Function(AuthState) then) = _$AuthStateCopyWithImpl<$Res, AuthState>;
   @useResult
-  $Res call({AppUser? user});
+  $Res call({AppUser? user, Cart cart});
 
   $AppUserCopyWith<$Res>? get user;
+  $CartCopyWith<$Res> get cart;
 }
 
 /// @nodoc
@@ -223,12 +225,17 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState> implements $AuthStat
   @override
   $Res call({
     Object? user = freezed,
+    Object? cart = null,
   }) {
     return _then(_value.copyWith(
       user: freezed == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as AppUser?,
+      cart: null == cart
+          ? _value.cart
+          : cart // ignore: cast_nullable_to_non_nullable
+              as Cart,
     ) as $Val);
   }
 
@@ -243,6 +250,14 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState> implements $AuthStat
       return _then(_value.copyWith(user: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $CartCopyWith<$Res> get cart {
+    return $CartCopyWith<$Res>(_value.cart, (value) {
+      return _then(_value.copyWith(cart: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -251,10 +266,12 @@ abstract class _$$AuthState$CopyWith<$Res> implements $AuthStateCopyWith<$Res> {
       __$$AuthState$CopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({AppUser? user});
+  $Res call({AppUser? user, Cart cart});
 
   @override
   $AppUserCopyWith<$Res>? get user;
+  @override
+  $CartCopyWith<$Res> get cart;
 }
 
 /// @nodoc
@@ -266,12 +283,17 @@ class __$$AuthState$CopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res, _$A
   @override
   $Res call({
     Object? user = freezed,
+    Object? cart = null,
   }) {
     return _then(_$AuthState$(
       user: freezed == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as AppUser?,
+      cart: null == cart
+          ? _value.cart
+          : cart // ignore: cast_nullable_to_non_nullable
+              as Cart,
     ));
   }
 }
@@ -279,16 +301,19 @@ class __$$AuthState$CopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res, _$A
 /// @nodoc
 @JsonSerializable()
 class _$AuthState$ implements AuthState$ {
-  const _$AuthState$({this.user});
+  const _$AuthState$({this.user, this.cart = const Cart()});
 
   factory _$AuthState$.fromJson(Map<String, dynamic> json) => _$$AuthState$FromJson(json);
 
   @override
   final AppUser? user;
+  @override
+  @JsonKey()
+  final Cart cart;
 
   @override
   String toString() {
-    return 'AuthState(user: $user)';
+    return 'AuthState(user: $user, cart: $cart)';
   }
 
   @override
@@ -296,12 +321,13 @@ class _$AuthState$ implements AuthState$ {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AuthState$ &&
-            (identical(other.user, user) || other.user == user));
+            (identical(other.user, user) || other.user == user) &&
+            (identical(other.cart, cart) || other.cart == cart));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, user);
+  int get hashCode => Object.hash(runtimeType, user, cart);
 
   @JsonKey(ignore: true)
   @override
@@ -317,15 +343,282 @@ class _$AuthState$ implements AuthState$ {
 }
 
 abstract class AuthState$ implements AuthState {
-  const factory AuthState$({final AppUser? user}) = _$AuthState$;
+  const factory AuthState$({final AppUser? user, final Cart cart}) = _$AuthState$;
 
   factory AuthState$.fromJson(Map<String, dynamic> json) = _$AuthState$.fromJson;
 
   @override
   AppUser? get user;
   @override
+  Cart get cart;
+  @override
   @JsonKey(ignore: true)
   _$$AuthState$CopyWith<_$AuthState$> get copyWith => throw _privateConstructorUsedError;
+}
+
+Cart _$CartFromJson(Map<String, dynamic> json) {
+  return Cart$.fromJson(json);
+}
+
+/// @nodoc
+mixin _$Cart {
+  List<CartItem> get items => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $CartCopyWith<Cart> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CartCopyWith<$Res> {
+  factory $CartCopyWith(Cart value, $Res Function(Cart) then) = _$CartCopyWithImpl<$Res, Cart>;
+  @useResult
+  $Res call({List<CartItem> items});
+}
+
+/// @nodoc
+class _$CartCopyWithImpl<$Res, $Val extends Cart> implements $CartCopyWith<$Res> {
+  _$CartCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? items = null,
+  }) {
+    return _then(_value.copyWith(
+      items: null == items
+          ? _value.items
+          : items // ignore: cast_nullable_to_non_nullable
+              as List<CartItem>,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$Cart$CopyWith<$Res> implements $CartCopyWith<$Res> {
+  factory _$$Cart$CopyWith(_$Cart$ value, $Res Function(_$Cart$) then) = __$$Cart$CopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({List<CartItem> items});
+}
+
+/// @nodoc
+class __$$Cart$CopyWithImpl<$Res> extends _$CartCopyWithImpl<$Res, _$Cart$> implements _$$Cart$CopyWith<$Res> {
+  __$$Cart$CopyWithImpl(_$Cart$ _value, $Res Function(_$Cart$) _then) : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? items = null,
+  }) {
+    return _then(_$Cart$(
+      items: null == items
+          ? _value._items
+          : items // ignore: cast_nullable_to_non_nullable
+              as List<CartItem>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$Cart$ implements Cart$ {
+  const _$Cart$({final List<CartItem> items = const <CartItem>[]}) : _items = items;
+
+  factory _$Cart$.fromJson(Map<String, dynamic> json) => _$$Cart$FromJson(json);
+
+  final List<CartItem> _items;
+  @override
+  @JsonKey()
+  List<CartItem> get items {
+    if (_items is EqualUnmodifiableListView) return _items;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_items);
+  }
+
+  @override
+  String toString() {
+    return 'Cart(items: $items)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$Cart$ &&
+            const DeepCollectionEquality().equals(other._items, _items));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_items));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$Cart$CopyWith<_$Cart$> get copyWith => __$$Cart$CopyWithImpl<_$Cart$>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$Cart$ToJson(
+      this,
+    );
+  }
+}
+
+abstract class Cart$ implements Cart {
+  const factory Cart$({final List<CartItem> items}) = _$Cart$;
+
+  factory Cart$.fromJson(Map<String, dynamic> json) = _$Cart$.fromJson;
+
+  @override
+  List<CartItem> get items;
+  @override
+  @JsonKey(ignore: true)
+  _$$Cart$CopyWith<_$Cart$> get copyWith => throw _privateConstructorUsedError;
+}
+
+CartItem _$CartItemFromJson(Map<String, dynamic> json) {
+  return CartItem$.fromJson(json);
+}
+
+/// @nodoc
+mixin _$CartItem {
+  String get productId => throw _privateConstructorUsedError;
+  int get quantity => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $CartItemCopyWith<CartItem> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CartItemCopyWith<$Res> {
+  factory $CartItemCopyWith(CartItem value, $Res Function(CartItem) then) = _$CartItemCopyWithImpl<$Res, CartItem>;
+  @useResult
+  $Res call({String productId, int quantity});
+}
+
+/// @nodoc
+class _$CartItemCopyWithImpl<$Res, $Val extends CartItem> implements $CartItemCopyWith<$Res> {
+  _$CartItemCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? productId = null,
+    Object? quantity = null,
+  }) {
+    return _then(_value.copyWith(
+      productId: null == productId
+          ? _value.productId
+          : productId // ignore: cast_nullable_to_non_nullable
+              as String,
+      quantity: null == quantity
+          ? _value.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as int,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$CartItem$CopyWith<$Res> implements $CartItemCopyWith<$Res> {
+  factory _$$CartItem$CopyWith(_$CartItem$ value, $Res Function(_$CartItem$) then) = __$$CartItem$CopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String productId, int quantity});
+}
+
+/// @nodoc
+class __$$CartItem$CopyWithImpl<$Res> extends _$CartItemCopyWithImpl<$Res, _$CartItem$>
+    implements _$$CartItem$CopyWith<$Res> {
+  __$$CartItem$CopyWithImpl(_$CartItem$ _value, $Res Function(_$CartItem$) _then) : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? productId = null,
+    Object? quantity = null,
+  }) {
+    return _then(_$CartItem$(
+      productId: null == productId
+          ? _value.productId
+          : productId // ignore: cast_nullable_to_non_nullable
+              as String,
+      quantity: null == quantity
+          ? _value.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$CartItem$ implements CartItem$ {
+  const _$CartItem$({required this.productId, required this.quantity});
+
+  factory _$CartItem$.fromJson(Map<String, dynamic> json) => _$$CartItem$FromJson(json);
+
+  @override
+  final String productId;
+  @override
+  final int quantity;
+
+  @override
+  String toString() {
+    return 'CartItem(productId: $productId, quantity: $quantity)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CartItem$ &&
+            (identical(other.productId, productId) || other.productId == productId) &&
+            (identical(other.quantity, quantity) || other.quantity == quantity));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, productId, quantity);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CartItem$CopyWith<_$CartItem$> get copyWith => __$$CartItem$CopyWithImpl<_$CartItem$>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$CartItem$ToJson(
+      this,
+    );
+  }
+}
+
+abstract class CartItem$ implements CartItem {
+  const factory CartItem$({required final String productId, required final int quantity}) = _$CartItem$;
+
+  factory CartItem$.fromJson(Map<String, dynamic> json) = _$CartItem$.fromJson;
+
+  @override
+  String get productId;
+  @override
+  int get quantity;
+  @override
+  @JsonKey(ignore: true)
+  _$$CartItem$CopyWith<_$CartItem$> get copyWith => throw _privateConstructorUsedError;
 }
 
 ProductsState _$ProductsStateFromJson(Map<String, dynamic> json) {
