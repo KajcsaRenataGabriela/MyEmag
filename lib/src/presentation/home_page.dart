@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_locker/flutter_locker.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 
 import '../actions/index.dart';
@@ -9,6 +10,31 @@ import 'containers/index.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
+
+  Future<void> _canAuthenticate(BuildContext context) async {
+    try {
+      final bool? canAuthenticate = await FlutterLocker.canAuthenticate();
+
+      _showMessage('Can authenticate: $canAuthenticate', context);
+    } on Exception catch (exception) {
+      _showErrorMessage(exception, context);
+    }
+  }
+
+  void _showMessage(String message, BuildContext context) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text(message)),
+    );
+  }
+
+  void _showErrorMessage(Exception exception, BuildContext context) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text('Something went wrong: $exception'),
+        duration: const Duration(seconds: 1),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +58,7 @@ class HomePage extends StatelessWidget {
                               color: Colors.white,
                             ),
                             onPressed: () {
+                              _canAuthenticate(context);
                               Navigator.pushNamed(context, '/cart');
                             }),
                         Align(

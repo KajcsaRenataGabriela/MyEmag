@@ -350,6 +350,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.1"
+  flutter_locker:
+    dependency: "direct main"
+    description:
+      name: flutter_locker
+      sha256: "4d7d209952a150f199b6c6b37cb6e9807df98a850c81e02b9c2a888aaa0a9ee1"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.1.2"
   flutter_redux:
     dependency: "direct main"
     description:

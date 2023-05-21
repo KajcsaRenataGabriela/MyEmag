@@ -23,6 +23,7 @@ dependencies:
   cached_network_image: ^3.2.3
   collection: ^1.15.2
   animate_gradient: ^0.0.2+1
+  flutter_locker: ^2.1.2
 
 dev_dependencies:
   build_runner: ^2.3.3
