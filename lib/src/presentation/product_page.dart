@@ -33,27 +33,55 @@ class ProductPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SelectedProductContainer(builder: (BuildContext context, Product product) {
       return Scaffold(
+        resizeToAvoidBottomInset: false,
         appBar: AppBar(
           title: Center(child: Text(product.title)),
         ),
-        body: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              children: <Widget>[
-                CachedNetworkImage(imageUrl: product.image),
-                const SizedBox(height: 16),
-                Text(product.description),
-                const SizedBox(height: 16),
-                Align(
-                  alignment: AlignmentDirectional.centerEnd,
-                  child: Text(
-                    '${product.price} RON',
-                    style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                  ),
+        body: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            children: <Widget>[
+              CachedNetworkImage(
+                imageUrl: product.image,
+                maxHeightDiskCache: 330,
+                //height: 400,
+              ),
+              const SizedBox(height: 16),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Container(
+                      decoration: BoxDecoration(
+                          color: Colors.pinkAccent.withOpacity(0.1),
+                          borderRadius:
+                              const BorderRadius.only(topLeft: Radius.circular(32.0), topRight: Radius.circular(32.0))),
+                      child: Padding(
+                        padding: const EdgeInsets.all(32.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text(
+                              product.title,
+                              style: const TextStyle(fontSize: 32.0),
+                            ),
+                            const SizedBox(height: 16.0),
+                            Text(
+                              product.description,
+                              style: const TextStyle(fontSize: 18.0),
+                            ),
+                            const SizedBox(height: 64.0),
+                            Align(
+                              alignment: AlignmentDirectional.centerEnd,
+                              child: Text(
+                                '${product.price} RON',
+                                style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ],
+                        ),
+                      )),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
         floatingActionButton: FloatingActionButton(

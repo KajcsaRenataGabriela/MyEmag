@@ -107,11 +107,18 @@ class HomePage extends StatelessWidget {
                           leading: CachedNetworkImage(
                             imageUrl: product.image,
                             fit: BoxFit.cover,
-                            width: 56.0,
-                            height: 56.0,
+                            width: 82.0,
                           ),
-                          title: Text('${product.title}${vendor == null ? '' : '/ ${vendor.name}'}'),
-                          subtitle: Text(product.description),
+                          title: Text(
+                            '${product.title}${vendor == null ? '' : '/ ${vendor.name}'}',
+                            style: const TextStyle(
+                              fontSize: 20.0,
+                            ),
+                          ),
+                          subtitle: Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: Text(product.description),
+                          ),
                           onTap: () {
                             StoreProvider.of<AppState>(context).dispatch(SetProduct(product.id));
                             Navigator.pushNamed(context, '/product');
