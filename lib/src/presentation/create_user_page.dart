@@ -67,7 +67,7 @@ class _CreateUserPageState extends State<CreateUserPage> {
                   builder: (BuildContext context, Set<String> pending) {
                     return Column(
                       children: <Widget>[
-                        Padding(
+                        Container(
                           padding: const EdgeInsets.all(32.0),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -133,7 +133,8 @@ class _CreateUserPageState extends State<CreateUserPage> {
                           ),
                           const SizedBox(height: 16.0),
                           FloatingActionButton.extended(
-                            label: const Text('Go to login'), // <-- Text
+                            label: const Text('Go to login'),
+                            // <-- Text
                             backgroundColor: Colors.pink.shade300,
                             icon: const Icon(
                               Icons.login,
