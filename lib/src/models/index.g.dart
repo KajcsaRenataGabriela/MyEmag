@@ -10,14 +10,14 @@ _$AppUser$ _$$AppUser$FromJson(Map<String, dynamic> json) => _$AppUser$(
       uid: json['uid'] as String,
       email: json['email'] as String,
       displayName: json['displayName'] as String,
-      profileUrl: json['profileUrl'] as String?,
+      pictureUrl: json['pictureUrl'] as String?,
     );
 
 Map<String, dynamic> _$$AppUser$ToJson(_$AppUser$ instance) => <String, dynamic>{
       'uid': instance.uid,
       'email': instance.email,
       'displayName': instance.displayName,
-      'profileUrl': instance.profileUrl,
+      'pictureUrl': instance.pictureUrl,
     };
 
 _$AuthState$ _$$AuthState$FromJson(Map<String, dynamic> json) => _$AuthState$(

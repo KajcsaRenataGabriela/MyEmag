@@ -23,7 +23,7 @@ mixin _$AppUser {
   String get uid => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   String get displayName => throw _privateConstructorUsedError;
-  String? get profileUrl => throw _privateConstructorUsedError;
+  String? get pictureUrl => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -34,7 +34,7 @@ mixin _$AppUser {
 abstract class $AppUserCopyWith<$Res> {
   factory $AppUserCopyWith(AppUser value, $Res Function(AppUser) then) = _$AppUserCopyWithImpl<$Res, AppUser>;
   @useResult
-  $Res call({String uid, String email, String displayName, String? profileUrl});
+  $Res call({String uid, String email, String displayName, String? pictureUrl});
 }
 
 /// @nodoc
@@ -52,7 +52,7 @@ class _$AppUserCopyWithImpl<$Res, $Val extends AppUser> implements $AppUserCopyW
     Object? uid = null,
     Object? email = null,
     Object? displayName = null,
-    Object? profileUrl = freezed,
+    Object? pictureUrl = freezed,
   }) {
     return _then(_value.copyWith(
       uid: null == uid
@@ -67,9 +67,9 @@ class _$AppUserCopyWithImpl<$Res, $Val extends AppUser> implements $AppUserCopyW
           ? _value.displayName
           : displayName // ignore: cast_nullable_to_non_nullable
               as String,
-      profileUrl: freezed == profileUrl
-          ? _value.profileUrl
-          : profileUrl // ignore: cast_nullable_to_non_nullable
+      pictureUrl: freezed == pictureUrl
+          ? _value.pictureUrl
+          : pictureUrl // ignore: cast_nullable_to_non_nullable
               as String?,
     ) as $Val);
   }
@@ -80,7 +80,7 @@ abstract class _$$AppUser$CopyWith<$Res> implements $AppUserCopyWith<$Res> {
   factory _$$AppUser$CopyWith(_$AppUser$ value, $Res Function(_$AppUser$) then) = __$$AppUser$CopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String uid, String email, String displayName, String? profileUrl});
+  $Res call({String uid, String email, String displayName, String? pictureUrl});
 }
 
 /// @nodoc
@@ -94,7 +94,7 @@ class __$$AppUser$CopyWithImpl<$Res> extends _$AppUserCopyWithImpl<$Res, _$AppUs
     Object? uid = null,
     Object? email = null,
     Object? displayName = null,
-    Object? profileUrl = freezed,
+    Object? pictureUrl = freezed,
   }) {
     return _then(_$AppUser$(
       uid: null == uid
@@ -109,9 +109,9 @@ class __$$AppUser$CopyWithImpl<$Res> extends _$AppUserCopyWithImpl<$Res, _$AppUs
           ? _value.displayName
           : displayName // ignore: cast_nullable_to_non_nullable
               as String,
-      profileUrl: freezed == profileUrl
-          ? _value.profileUrl
-          : profileUrl // ignore: cast_nullable_to_non_nullable
+      pictureUrl: freezed == pictureUrl
+          ? _value.pictureUrl
+          : pictureUrl // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
@@ -120,7 +120,7 @@ class __$$AppUser$CopyWithImpl<$Res> extends _$AppUserCopyWithImpl<$Res, _$AppUs
 /// @nodoc
 @JsonSerializable()
 class _$AppUser$ implements AppUser$ {
-  const _$AppUser$({required this.uid, required this.email, required this.displayName, this.profileUrl});
+  const _$AppUser$({required this.uid, required this.email, required this.displayName, this.pictureUrl});
 
   factory _$AppUser$.fromJson(Map<String, dynamic> json) => _$$AppUser$FromJson(json);
 
@@ -131,11 +131,11 @@ class _$AppUser$ implements AppUser$ {
   @override
   final String displayName;
   @override
-  final String? profileUrl;
+  final String? pictureUrl;
 
   @override
   String toString() {
-    return 'AppUser(uid: $uid, email: $email, displayName: $displayName, profileUrl: $profileUrl)';
+    return 'AppUser(uid: $uid, email: $email, displayName: $displayName, pictureUrl: $pictureUrl)';
   }
 
   @override
@@ -146,12 +146,12 @@ class _$AppUser$ implements AppUser$ {
             (identical(other.uid, uid) || other.uid == uid) &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.displayName, displayName) || other.displayName == displayName) &&
-            (identical(other.profileUrl, profileUrl) || other.profileUrl == profileUrl));
+            (identical(other.pictureUrl, pictureUrl) || other.pictureUrl == pictureUrl));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, uid, email, displayName, profileUrl);
+  int get hashCode => Object.hash(runtimeType, uid, email, displayName, pictureUrl);
 
   @JsonKey(ignore: true)
   @override
@@ -171,7 +171,7 @@ abstract class AppUser$ implements AppUser {
       {required final String uid,
       required final String email,
       required final String displayName,
-      final String? profileUrl}) = _$AppUser$;
+      final String? pictureUrl}) = _$AppUser$;
 
   factory AppUser$.fromJson(Map<String, dynamic> json) = _$AppUser$.fromJson;
 
@@ -182,7 +182,7 @@ abstract class AppUser$ implements AppUser {
   @override
   String get displayName;
   @override
-  String? get profileUrl;
+  String? get pictureUrl;
   @override
   @JsonKey(ignore: true)
   _$$AppUser$CopyWith<_$AppUser$> get copyWith => throw _privateConstructorUsedError;

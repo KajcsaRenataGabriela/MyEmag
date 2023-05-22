@@ -15,6 +15,8 @@ class HomePage extends StatelessWidget {
     try {
       final bool? canAuthenticate = await FlutterLocker.canAuthenticate();
 
+      // this for sure won't pop
+      //ignore: use_build_context_synchronously
       _showMessage('Can authenticate: $canAuthenticate', context);
     } on Exception catch (exception) {
       _showErrorMessage(exception, context);
@@ -43,6 +45,12 @@ class HomePage extends StatelessWidget {
         return HomeProductsContainer(builder: (BuildContext context, List<Product> products) {
           return Scaffold(
             appBar: AppBar(
+              leading: IconButton(
+                icon: const Icon(Icons.person),
+                onPressed: () {
+                  Navigator.pushNamed(context, '/profile');
+                },
+              ),
               actions: <Widget>[
                 CartContainer(
                   builder: (BuildContext context, Cart cart) {

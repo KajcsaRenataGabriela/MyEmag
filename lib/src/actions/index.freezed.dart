@@ -2212,6 +2212,535 @@ abstract class UpdateCartStart implements UpdateCart {
 }
 
 /// @nodoc
+mixin _$UpdateProfileUrl {
+  String get pendingId => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String path, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String path, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String path, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UpdateProfileUrlStart value) start,
+    required TResult Function(UpdateProfileUrlSuccessful value) successful,
+    required TResult Function(UpdateProfileUrlError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UpdateProfileUrlStart value)? start,
+    TResult? Function(UpdateProfileUrlSuccessful value)? successful,
+    TResult? Function(UpdateProfileUrlError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UpdateProfileUrlStart value)? start,
+    TResult Function(UpdateProfileUrlSuccessful value)? successful,
+    TResult Function(UpdateProfileUrlError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $UpdateProfileUrlCopyWith<UpdateProfileUrl> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UpdateProfileUrlCopyWith<$Res> {
+  factory $UpdateProfileUrlCopyWith(UpdateProfileUrl value, $Res Function(UpdateProfileUrl) then) =
+      _$UpdateProfileUrlCopyWithImpl<$Res, UpdateProfileUrl>;
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$UpdateProfileUrlCopyWithImpl<$Res, $Val extends UpdateProfileUrl> implements $UpdateProfileUrlCopyWith<$Res> {
+  _$UpdateProfileUrlCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$UpdateProfileUrlStartCopyWith<$Res> implements $UpdateProfileUrlCopyWith<$Res> {
+  factory _$$UpdateProfileUrlStartCopyWith(_$UpdateProfileUrlStart value, $Res Function(_$UpdateProfileUrlStart) then) =
+      __$$UpdateProfileUrlStartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String path, String pendingId});
+}
+
+/// @nodoc
+class __$$UpdateProfileUrlStartCopyWithImpl<$Res> extends _$UpdateProfileUrlCopyWithImpl<$Res, _$UpdateProfileUrlStart>
+    implements _$$UpdateProfileUrlStartCopyWith<$Res> {
+  __$$UpdateProfileUrlStartCopyWithImpl(_$UpdateProfileUrlStart _value, $Res Function(_$UpdateProfileUrlStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? path = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$UpdateProfileUrlStart(
+      null == path
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as String,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateProfileUrlStart implements UpdateProfileUrlStart {
+  const _$UpdateProfileUrlStart(this.path, {this.pendingId = _kUpdateProfileUrlPendingId});
+
+  @override
+  final String path;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'UpdateProfileUrl.start(path: $path, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateProfileUrlStart &&
+            (identical(other.path, path) || other.path == path) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, path, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateProfileUrlStartCopyWith<_$UpdateProfileUrlStart> get copyWith =>
+      __$$UpdateProfileUrlStartCopyWithImpl<_$UpdateProfileUrlStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String path, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return start(path, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String path, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return start?.call(path, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String path, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(path, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UpdateProfileUrlStart value) start,
+    required TResult Function(UpdateProfileUrlSuccessful value) successful,
+    required TResult Function(UpdateProfileUrlError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UpdateProfileUrlStart value)? start,
+    TResult? Function(UpdateProfileUrlSuccessful value)? successful,
+    TResult? Function(UpdateProfileUrlError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UpdateProfileUrlStart value)? start,
+    TResult Function(UpdateProfileUrlSuccessful value)? successful,
+    TResult Function(UpdateProfileUrlError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateProfileUrlStart implements UpdateProfileUrl, StartAction {
+  const factory UpdateProfileUrlStart(final String path, {final String pendingId}) = _$UpdateProfileUrlStart;
+
+  String get path;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$UpdateProfileUrlStartCopyWith<_$UpdateProfileUrlStart> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateProfileUrlSuccessfulCopyWith<$Res> implements $UpdateProfileUrlCopyWith<$Res> {
+  factory _$$UpdateProfileUrlSuccessfulCopyWith(
+          _$UpdateProfileUrlSuccessful value, $Res Function(_$UpdateProfileUrlSuccessful) then) =
+      __$$UpdateProfileUrlSuccessfulCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class __$$UpdateProfileUrlSuccessfulCopyWithImpl<$Res>
+    extends _$UpdateProfileUrlCopyWithImpl<$Res, _$UpdateProfileUrlSuccessful>
+    implements _$$UpdateProfileUrlSuccessfulCopyWith<$Res> {
+  __$$UpdateProfileUrlSuccessfulCopyWithImpl(
+      _$UpdateProfileUrlSuccessful _value, $Res Function(_$UpdateProfileUrlSuccessful) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_$UpdateProfileUrlSuccessful(
+      null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateProfileUrlSuccessful implements UpdateProfileUrlSuccessful {
+  const _$UpdateProfileUrlSuccessful([this.pendingId = _kUpdateProfileUrlPendingId]);
+
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'UpdateProfileUrl.successful(pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateProfileUrlSuccessful &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateProfileUrlSuccessfulCopyWith<_$UpdateProfileUrlSuccessful> get copyWith =>
+      __$$UpdateProfileUrlSuccessfulCopyWithImpl<_$UpdateProfileUrlSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String path, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return successful(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String path, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return successful?.call(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String path, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UpdateProfileUrlStart value) start,
+    required TResult Function(UpdateProfileUrlSuccessful value) successful,
+    required TResult Function(UpdateProfileUrlError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UpdateProfileUrlStart value)? start,
+    TResult? Function(UpdateProfileUrlSuccessful value)? successful,
+    TResult? Function(UpdateProfileUrlError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UpdateProfileUrlStart value)? start,
+    TResult Function(UpdateProfileUrlSuccessful value)? successful,
+    TResult Function(UpdateProfileUrlError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateProfileUrlSuccessful implements UpdateProfileUrl, StopAction {
+  const factory UpdateProfileUrlSuccessful([final String pendingId]) = _$UpdateProfileUrlSuccessful;
+
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$UpdateProfileUrlSuccessfulCopyWith<_$UpdateProfileUrlSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateProfileUrlErrorCopyWith<$Res> implements $UpdateProfileUrlCopyWith<$Res> {
+  factory _$$UpdateProfileUrlErrorCopyWith(_$UpdateProfileUrlError value, $Res Function(_$UpdateProfileUrlError) then) =
+      __$$UpdateProfileUrlErrorCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class __$$UpdateProfileUrlErrorCopyWithImpl<$Res> extends _$UpdateProfileUrlCopyWithImpl<$Res, _$UpdateProfileUrlError>
+    implements _$$UpdateProfileUrlErrorCopyWith<$Res> {
+  __$$UpdateProfileUrlErrorCopyWithImpl(_$UpdateProfileUrlError _value, $Res Function(_$UpdateProfileUrlError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$UpdateProfileUrlError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateProfileUrlError implements UpdateProfileUrlError {
+  const _$UpdateProfileUrlError(this.error, this.stackTrace, [this.pendingId = _kUpdateProfileUrlPendingId]);
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'UpdateProfileUrl.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateProfileUrlError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateProfileUrlErrorCopyWith<_$UpdateProfileUrlError> get copyWith =>
+      __$$UpdateProfileUrlErrorCopyWithImpl<_$UpdateProfileUrlError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String path, String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String path, String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String path, String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UpdateProfileUrlStart value) start,
+    required TResult Function(UpdateProfileUrlSuccessful value) successful,
+    required TResult Function(UpdateProfileUrlError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UpdateProfileUrlStart value)? start,
+    TResult? Function(UpdateProfileUrlSuccessful value)? successful,
+    TResult? Function(UpdateProfileUrlError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UpdateProfileUrlStart value)? start,
+    TResult Function(UpdateProfileUrlSuccessful value)? successful,
+    TResult Function(UpdateProfileUrlError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateProfileUrlError implements UpdateProfileUrl, StopAction {
+  const factory UpdateProfileUrlError(final Object error, final StackTrace stackTrace, [final String pendingId]) =
+      _$UpdateProfileUrlError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$UpdateProfileUrlErrorCopyWith<_$UpdateProfileUrlError> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$ListCategory {
   String get pendingId => throw _privateConstructorUsedError;
   @optionalTypeArgs

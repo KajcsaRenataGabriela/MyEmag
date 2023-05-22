@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
@@ -20,13 +21,14 @@ import 'src/presentation/create_user_page.dart';
 import 'src/presentation/home_page.dart';
 import 'src/presentation/login_page.dart';
 import 'src/presentation/product_page.dart';
+import 'src/presentation/profile_page.dart';
 import 'src/reducer/reducer.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
-  final AuthApi authApi = AuthApi(FirebaseAuth.instance);
+  final AuthApi authApi = AuthApi(FirebaseAuth.instance, FirebaseStorage.instance);
   final AuthEpics auth = AuthEpics(authApi);
   final ProductsApi productsApi = ProductsApi(FirebaseFirestore.instance);
   final ProductsEpics products = ProductsEpics(productsApi);
@@ -74,6 +76,7 @@ class MyApp extends StatelessWidget {
           '/create': (BuildContext context) => const CreateUserPage(),
           '/product': (BuildContext context) => const ProductPage(),
           '/cart': (BuildContext context) => const CartPage(),
+          '/profile': (BuildContext context) => const ProfilePage(),
         },
       ),
     );
