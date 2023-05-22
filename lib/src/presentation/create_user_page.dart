@@ -69,24 +69,21 @@ class _CreateUserPageState extends State<CreateUserPage> {
                       children: <Widget>[
                         Container(
                           padding: const EdgeInsets.all(32.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: const <Widget>[
-                              Text(
-                                'Sign UP',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 54,
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                              Icon(
-                                Icons.upload_rounded,
-                                size: 64.0,
+                          child: const ListTile(
+                            leading: Text(
+                              'Sign UP',
+                              style: TextStyle(
                                 color: Colors.white,
-                              )
-                            ],
+                                fontWeight: FontWeight.bold,
+                                fontSize: 50.0,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                            title: Icon(
+                              Icons.upload_rounded,
+                              size: 64.0,
+                              color: Colors.white,
+                            ),
                           ),
                         ),
                         Container(
