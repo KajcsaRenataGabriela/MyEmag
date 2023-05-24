@@ -3,7 +3,7 @@ part of '../index.dart';
 @freezed
 class Product with _$Product {
   const factory Product({
-    required String id,
+    @JsonSerializable(explicitToJson: true) required String id,
     //required List<ProductVariant> variant,
     required String title,
     required String description,

@@ -20,6 +20,7 @@ AppUser _$AppUserFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$AppUser {
+  @JsonSerializable(explicitToJson: true)
   String get uid => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   String get displayName => throw _privateConstructorUsedError;
@@ -34,7 +35,7 @@ mixin _$AppUser {
 abstract class $AppUserCopyWith<$Res> {
   factory $AppUserCopyWith(AppUser value, $Res Function(AppUser) then) = _$AppUserCopyWithImpl<$Res, AppUser>;
   @useResult
-  $Res call({String uid, String email, String displayName, String? pictureUrl});
+  $Res call({@JsonSerializable(explicitToJson: true) String uid, String email, String displayName, String? pictureUrl});
 }
 
 /// @nodoc
@@ -80,7 +81,7 @@ abstract class _$$AppUser$CopyWith<$Res> implements $AppUserCopyWith<$Res> {
   factory _$$AppUser$CopyWith(_$AppUser$ value, $Res Function(_$AppUser$) then) = __$$AppUser$CopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String uid, String email, String displayName, String? pictureUrl});
+  $Res call({@JsonSerializable(explicitToJson: true) String uid, String email, String displayName, String? pictureUrl});
 }
 
 /// @nodoc
@@ -120,11 +121,16 @@ class __$$AppUser$CopyWithImpl<$Res> extends _$AppUserCopyWithImpl<$Res, _$AppUs
 /// @nodoc
 @JsonSerializable()
 class _$AppUser$ implements AppUser$ {
-  const _$AppUser$({required this.uid, required this.email, required this.displayName, this.pictureUrl});
+  const _$AppUser$(
+      {@JsonSerializable(explicitToJson: true) required this.uid,
+      required this.email,
+      required this.displayName,
+      this.pictureUrl});
 
   factory _$AppUser$.fromJson(Map<String, dynamic> json) => _$$AppUser$FromJson(json);
 
   @override
+  @JsonSerializable(explicitToJson: true)
   final String uid;
   @override
   final String email;
@@ -168,7 +174,7 @@ class _$AppUser$ implements AppUser$ {
 
 abstract class AppUser$ implements AppUser {
   const factory AppUser$(
-      {required final String uid,
+      {@JsonSerializable(explicitToJson: true) required final String uid,
       required final String email,
       required final String displayName,
       final String? pictureUrl}) = _$AppUser$;
@@ -176,6 +182,7 @@ abstract class AppUser$ implements AppUser {
   factory AppUser$.fromJson(Map<String, dynamic> json) = _$AppUser$.fromJson;
 
   @override
+  @JsonSerializable(explicitToJson: true)
   String get uid;
   @override
   String get email;
@@ -194,6 +201,7 @@ AuthState _$AuthStateFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$AuthState {
+  @JsonSerializable(explicitToJson: true)
   AppUser? get user => throw _privateConstructorUsedError;
   Cart get cart => throw _privateConstructorUsedError;
 
@@ -206,7 +214,7 @@ mixin _$AuthState {
 abstract class $AuthStateCopyWith<$Res> {
   factory $AuthStateCopyWith(AuthState value, $Res Function(AuthState) then) = _$AuthStateCopyWithImpl<$Res, AuthState>;
   @useResult
-  $Res call({AppUser? user, Cart cart});
+  $Res call({@JsonSerializable(explicitToJson: true) AppUser? user, Cart cart});
 
   $AppUserCopyWith<$Res>? get user;
   $CartCopyWith<$Res> get cart;
@@ -266,7 +274,7 @@ abstract class _$$AuthState$CopyWith<$Res> implements $AuthStateCopyWith<$Res> {
       __$$AuthState$CopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({AppUser? user, Cart cart});
+  $Res call({@JsonSerializable(explicitToJson: true) AppUser? user, Cart cart});
 
   @override
   $AppUserCopyWith<$Res>? get user;
@@ -301,11 +309,12 @@ class __$$AuthState$CopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res, _$A
 /// @nodoc
 @JsonSerializable()
 class _$AuthState$ implements AuthState$ {
-  const _$AuthState$({this.user, this.cart = const Cart()});
+  const _$AuthState$({@JsonSerializable(explicitToJson: true) this.user, this.cart = const Cart()});
 
   factory _$AuthState$.fromJson(Map<String, dynamic> json) => _$$AuthState$FromJson(json);
 
   @override
+  @JsonSerializable(explicitToJson: true)
   final AppUser? user;
   @override
   @JsonKey()
@@ -343,11 +352,13 @@ class _$AuthState$ implements AuthState$ {
 }
 
 abstract class AuthState$ implements AuthState {
-  const factory AuthState$({final AppUser? user, final Cart cart}) = _$AuthState$;
+  const factory AuthState$({@JsonSerializable(explicitToJson: true) final AppUser? user, final Cart cart}) =
+      _$AuthState$;
 
   factory AuthState$.fromJson(Map<String, dynamic> json) = _$AuthState$.fromJson;
 
   @override
+  @JsonSerializable(explicitToJson: true)
   AppUser? get user;
   @override
   Cart get cart;
@@ -362,6 +373,7 @@ Cart _$CartFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Cart {
+  @JsonSerializable(explicitToJson: true)
   List<CartItem> get items => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -373,7 +385,7 @@ mixin _$Cart {
 abstract class $CartCopyWith<$Res> {
   factory $CartCopyWith(Cart value, $Res Function(Cart) then) = _$CartCopyWithImpl<$Res, Cart>;
   @useResult
-  $Res call({List<CartItem> items});
+  $Res call({@JsonSerializable(explicitToJson: true) List<CartItem> items});
 }
 
 /// @nodoc
@@ -404,7 +416,7 @@ abstract class _$$Cart$CopyWith<$Res> implements $CartCopyWith<$Res> {
   factory _$$Cart$CopyWith(_$Cart$ value, $Res Function(_$Cart$) then) = __$$Cart$CopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<CartItem> items});
+  $Res call({@JsonSerializable(explicitToJson: true) List<CartItem> items});
 }
 
 /// @nodoc
@@ -428,13 +440,15 @@ class __$$Cart$CopyWithImpl<$Res> extends _$CartCopyWithImpl<$Res, _$Cart$> impl
 /// @nodoc
 @JsonSerializable()
 class _$Cart$ implements Cart$ {
-  const _$Cart$({final List<CartItem> items = const <CartItem>[]}) : _items = items;
+  const _$Cart$({@JsonSerializable(explicitToJson: true) final List<CartItem> items = const <CartItem>[]})
+      : _items = items;
 
   factory _$Cart$.fromJson(Map<String, dynamic> json) => _$$Cart$FromJson(json);
 
   final List<CartItem> _items;
   @override
   @JsonKey()
+  @JsonSerializable(explicitToJson: true)
   List<CartItem> get items {
     if (_items is EqualUnmodifiableListView) return _items;
     // ignore: implicit_dynamic_type
@@ -472,11 +486,12 @@ class _$Cart$ implements Cart$ {
 }
 
 abstract class Cart$ implements Cart {
-  const factory Cart$({final List<CartItem> items}) = _$Cart$;
+  const factory Cart$({@JsonSerializable(explicitToJson: true) final List<CartItem> items}) = _$Cart$;
 
   factory Cart$.fromJson(Map<String, dynamic> json) = _$Cart$.fromJson;
 
   @override
+  @JsonSerializable(explicitToJson: true)
   List<CartItem> get items;
   @override
   @JsonKey(ignore: true)
@@ -489,6 +504,7 @@ CartItem _$CartItemFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$CartItem {
+  @JsonSerializable(explicitToJson: true)
   String get productId => throw _privateConstructorUsedError;
   int get quantity => throw _privateConstructorUsedError;
 
@@ -501,7 +517,7 @@ mixin _$CartItem {
 abstract class $CartItemCopyWith<$Res> {
   factory $CartItemCopyWith(CartItem value, $Res Function(CartItem) then) = _$CartItemCopyWithImpl<$Res, CartItem>;
   @useResult
-  $Res call({String productId, int quantity});
+  $Res call({@JsonSerializable(explicitToJson: true) String productId, int quantity});
 }
 
 /// @nodoc
@@ -537,7 +553,7 @@ abstract class _$$CartItem$CopyWith<$Res> implements $CartItemCopyWith<$Res> {
   factory _$$CartItem$CopyWith(_$CartItem$ value, $Res Function(_$CartItem$) then) = __$$CartItem$CopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String productId, int quantity});
+  $Res call({@JsonSerializable(explicitToJson: true) String productId, int quantity});
 }
 
 /// @nodoc
@@ -567,11 +583,12 @@ class __$$CartItem$CopyWithImpl<$Res> extends _$CartItemCopyWithImpl<$Res, _$Car
 /// @nodoc
 @JsonSerializable()
 class _$CartItem$ implements CartItem$ {
-  const _$CartItem$({required this.productId, required this.quantity});
+  const _$CartItem$({@JsonSerializable(explicitToJson: true) required this.productId, required this.quantity});
 
   factory _$CartItem$.fromJson(Map<String, dynamic> json) => _$$CartItem$FromJson(json);
 
   @override
+  @JsonSerializable(explicitToJson: true)
   final String productId;
   @override
   final int quantity;
@@ -608,11 +625,14 @@ class _$CartItem$ implements CartItem$ {
 }
 
 abstract class CartItem$ implements CartItem {
-  const factory CartItem$({required final String productId, required final int quantity}) = _$CartItem$;
+  const factory CartItem$(
+      {@JsonSerializable(explicitToJson: true) required final String productId,
+      required final int quantity}) = _$CartItem$;
 
   factory CartItem$.fromJson(Map<String, dynamic> json) = _$CartItem$.fromJson;
 
   @override
+  @JsonSerializable(explicitToJson: true)
   String get productId;
   @override
   int get quantity;
@@ -627,6 +647,7 @@ ProductsState _$ProductsStateFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ProductsState {
+  @JsonSerializable(explicitToJson: true)
   Map<String, Product> get products => throw _privateConstructorUsedError;
   List<String> get productIds => throw _privateConstructorUsedError;
   List<Category> get categories => throw _privateConstructorUsedError;
@@ -645,7 +666,7 @@ abstract class $ProductsStateCopyWith<$Res> {
       _$ProductsStateCopyWithImpl<$Res, ProductsState>;
   @useResult
   $Res call(
-      {Map<String, Product> products,
+      {@JsonSerializable(explicitToJson: true) Map<String, Product> products,
       List<String> productIds,
       List<Category> categories,
       List<Vendor> vendors,
@@ -708,7 +729,7 @@ abstract class _$$ProductsState$CopyWith<$Res> implements $ProductsStateCopyWith
   @override
   @useResult
   $Res call(
-      {Map<String, Product> products,
+      {@JsonSerializable(explicitToJson: true) Map<String, Product> products,
       List<String> productIds,
       List<Category> categories,
       List<Vendor> vendors,
@@ -764,7 +785,7 @@ class __$$ProductsState$CopyWithImpl<$Res> extends _$ProductsStateCopyWithImpl<$
 @JsonSerializable()
 class _$ProductsState$ implements ProductsState$ {
   const _$ProductsState$(
-      {final Map<String, Product> products = const <String, Product>{},
+      {@JsonSerializable(explicitToJson: true) final Map<String, Product> products = const <String, Product>{},
       final List<String> productIds = const <String>[],
       final List<Category> categories = const <Category>[],
       final List<Vendor> vendors = const <Vendor>[],
@@ -780,6 +801,7 @@ class _$ProductsState$ implements ProductsState$ {
   final Map<String, Product> _products;
   @override
   @JsonKey()
+  @JsonSerializable(explicitToJson: true)
   Map<String, Product> get products {
     if (_products is EqualUnmodifiableMapView) return _products;
     // ignore: implicit_dynamic_type
@@ -864,7 +886,7 @@ class _$ProductsState$ implements ProductsState$ {
 
 abstract class ProductsState$ implements ProductsState {
   const factory ProductsState$(
-      {final Map<String, Product> products,
+      {@JsonSerializable(explicitToJson: true) final Map<String, Product> products,
       final List<String> productIds,
       final List<Category> categories,
       final List<Vendor> vendors,
@@ -874,6 +896,7 @@ abstract class ProductsState$ implements ProductsState {
   factory ProductsState$.fromJson(Map<String, dynamic> json) = _$ProductsState$.fromJson;
 
   @override
+  @JsonSerializable(explicitToJson: true)
   Map<String, Product> get products;
   @override
   List<String> get productIds;
@@ -896,6 +919,7 @@ Product _$ProductFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Product {
+  @JsonSerializable(explicitToJson: true)
   String get id => throw _privateConstructorUsedError; //required List<ProductVariant> variant,
   String get title => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
@@ -914,7 +938,13 @@ abstract class $ProductCopyWith<$Res> {
   factory $ProductCopyWith(Product value, $Res Function(Product) then) = _$ProductCopyWithImpl<$Res, Product>;
   @useResult
   $Res call(
-      {String id, String title, String description, String image, double price, String categoryId, String vendorId});
+      {@JsonSerializable(explicitToJson: true) String id,
+      String title,
+      String description,
+      String image,
+      double price,
+      String categoryId,
+      String vendorId});
 }
 
 /// @nodoc
@@ -976,7 +1006,13 @@ abstract class _$$Product$CopyWith<$Res> implements $ProductCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String id, String title, String description, String image, double price, String categoryId, String vendorId});
+      {@JsonSerializable(explicitToJson: true) String id,
+      String title,
+      String description,
+      String image,
+      double price,
+      String categoryId,
+      String vendorId});
 }
 
 /// @nodoc
@@ -1032,7 +1068,7 @@ class __$$Product$CopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res, _$Produ
 @JsonSerializable()
 class _$Product$ implements Product$ {
   const _$Product$(
-      {required this.id,
+      {@JsonSerializable(explicitToJson: true) required this.id,
       required this.title,
       required this.description,
       required this.image,
@@ -1043,6 +1079,7 @@ class _$Product$ implements Product$ {
   factory _$Product$.fromJson(Map<String, dynamic> json) => _$$Product$FromJson(json);
 
   @override
+  @JsonSerializable(explicitToJson: true)
   final String id;
 //required List<ProductVariant> variant,
   @override
@@ -1096,7 +1133,7 @@ class _$Product$ implements Product$ {
 
 abstract class Product$ implements Product {
   const factory Product$(
-      {required final String id,
+      {@JsonSerializable(explicitToJson: true) required final String id,
       required final String title,
       required final String description,
       required final String image,
@@ -1107,6 +1144,7 @@ abstract class Product$ implements Product {
   factory Product$.fromJson(Map<String, dynamic> json) = _$Product$.fromJson;
 
   @override
+  @JsonSerializable(explicitToJson: true)
   String get id;
   @override //required List<ProductVariant> variant,
   String get title;
@@ -1131,6 +1169,7 @@ Category _$CategoryFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Category {
+  @JsonSerializable(explicitToJson: true)
   String get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   int get icon => throw _privateConstructorUsedError;
@@ -1144,7 +1183,7 @@ mixin _$Category {
 abstract class $CategoryCopyWith<$Res> {
   factory $CategoryCopyWith(Category value, $Res Function(Category) then) = _$CategoryCopyWithImpl<$Res, Category>;
   @useResult
-  $Res call({String id, String title, int icon});
+  $Res call({@JsonSerializable(explicitToJson: true) String id, String title, int icon});
 }
 
 /// @nodoc
@@ -1185,7 +1224,7 @@ abstract class _$$Category$CopyWith<$Res> implements $CategoryCopyWith<$Res> {
   factory _$$Category$CopyWith(_$Category$ value, $Res Function(_$Category$) then) = __$$Category$CopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String title, int icon});
+  $Res call({@JsonSerializable(explicitToJson: true) String id, String title, int icon});
 }
 
 /// @nodoc
@@ -1220,11 +1259,13 @@ class __$$Category$CopyWithImpl<$Res> extends _$CategoryCopyWithImpl<$Res, _$Cat
 /// @nodoc
 @JsonSerializable()
 class _$Category$ extends Category$ {
-  const _$Category$({required this.id, required this.title, required this.icon}) : super._();
+  const _$Category$({@JsonSerializable(explicitToJson: true) required this.id, required this.title, required this.icon})
+      : super._();
 
   factory _$Category$.fromJson(Map<String, dynamic> json) => _$$Category$FromJson(json);
 
   @override
+  @JsonSerializable(explicitToJson: true)
   final String id;
   @override
   final String title;
@@ -1264,13 +1305,16 @@ class _$Category$ extends Category$ {
 }
 
 abstract class Category$ extends Category {
-  const factory Category$({required final String id, required final String title, required final int icon}) =
-      _$Category$;
+  const factory Category$(
+      {@JsonSerializable(explicitToJson: true) required final String id,
+      required final String title,
+      required final int icon}) = _$Category$;
   const Category$._() : super._();
 
   factory Category$.fromJson(Map<String, dynamic> json) = _$Category$.fromJson;
 
   @override
+  @JsonSerializable(explicitToJson: true)
   String get id;
   @override
   String get title;
@@ -1287,6 +1331,7 @@ Vendor _$VendorFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Vendor {
+  @JsonSerializable(explicitToJson: true)
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get image => throw _privateConstructorUsedError;
@@ -1301,7 +1346,7 @@ mixin _$Vendor {
 abstract class $VendorCopyWith<$Res> {
   factory $VendorCopyWith(Vendor value, $Res Function(Vendor) then) = _$VendorCopyWithImpl<$Res, Vendor>;
   @useResult
-  $Res call({String id, String name, String image, String description});
+  $Res call({@JsonSerializable(explicitToJson: true) String id, String name, String image, String description});
 }
 
 /// @nodoc
@@ -1347,7 +1392,7 @@ abstract class _$$Vendor$CopyWith<$Res> implements $VendorCopyWith<$Res> {
   factory _$$Vendor$CopyWith(_$Vendor$ value, $Res Function(_$Vendor$) then) = __$$Vendor$CopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String name, String image, String description});
+  $Res call({@JsonSerializable(explicitToJson: true) String id, String name, String image, String description});
 }
 
 /// @nodoc
@@ -1386,11 +1431,16 @@ class __$$Vendor$CopyWithImpl<$Res> extends _$VendorCopyWithImpl<$Res, _$Vendor$
 /// @nodoc
 @JsonSerializable()
 class _$Vendor$ implements Vendor$ {
-  const _$Vendor$({required this.id, required this.name, required this.image, required this.description});
+  const _$Vendor$(
+      {@JsonSerializable(explicitToJson: true) required this.id,
+      required this.name,
+      required this.image,
+      required this.description});
 
   factory _$Vendor$.fromJson(Map<String, dynamic> json) => _$$Vendor$FromJson(json);
 
   @override
+  @JsonSerializable(explicitToJson: true)
   final String id;
   @override
   final String name;
@@ -1434,7 +1484,7 @@ class _$Vendor$ implements Vendor$ {
 
 abstract class Vendor$ implements Vendor {
   const factory Vendor$(
-      {required final String id,
+      {@JsonSerializable(explicitToJson: true) required final String id,
       required final String name,
       required final String image,
       required final String description}) = _$Vendor$;
@@ -1442,6 +1492,7 @@ abstract class Vendor$ implements Vendor {
   factory Vendor$.fromJson(Map<String, dynamic> json) = _$Vendor$.fromJson;
 
   @override
+  @JsonSerializable(explicitToJson: true)
   String get id;
   @override
   String get name;
@@ -1454,6 +1505,390 @@ abstract class Vendor$ implements Vendor {
   _$$Vendor$CopyWith<_$Vendor$> get copyWith => throw _privateConstructorUsedError;
 }
 
+Order _$OrderFromJson(Map<String, dynamic> json) {
+  return Order$.fromJson(json);
+}
+
+/// @nodoc
+mixin _$Order {
+  @JsonSerializable(explicitToJson: true)
+  String get id => throw _privateConstructorUsedError;
+  String get uid => throw _privateConstructorUsedError;
+  Cart get cart => throw _privateConstructorUsedError;
+  List<Product> get products => throw _privateConstructorUsedError;
+  DateTime get createdAt => throw _privateConstructorUsedError;
+  OrderStatus get status => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $OrderCopyWith<Order> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $OrderCopyWith<$Res> {
+  factory $OrderCopyWith(Order value, $Res Function(Order) then) = _$OrderCopyWithImpl<$Res, Order>;
+  @useResult
+  $Res call(
+      {@JsonSerializable(explicitToJson: true) String id,
+      String uid,
+      Cart cart,
+      List<Product> products,
+      DateTime createdAt,
+      OrderStatus status});
+
+  $CartCopyWith<$Res> get cart;
+}
+
+/// @nodoc
+class _$OrderCopyWithImpl<$Res, $Val extends Order> implements $OrderCopyWith<$Res> {
+  _$OrderCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? uid = null,
+    Object? cart = null,
+    Object? products = null,
+    Object? createdAt = null,
+    Object? status = null,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      uid: null == uid
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
+      cart: null == cart
+          ? _value.cart
+          : cart // ignore: cast_nullable_to_non_nullable
+              as Cart,
+      products: null == products
+          ? _value.products
+          : products // ignore: cast_nullable_to_non_nullable
+              as List<Product>,
+      createdAt: null == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as OrderStatus,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $CartCopyWith<$Res> get cart {
+    return $CartCopyWith<$Res>(_value.cart, (value) {
+      return _then(_value.copyWith(cart: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$Order$CopyWith<$Res> implements $OrderCopyWith<$Res> {
+  factory _$$Order$CopyWith(_$Order$ value, $Res Function(_$Order$) then) = __$$Order$CopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonSerializable(explicitToJson: true) String id,
+      String uid,
+      Cart cart,
+      List<Product> products,
+      DateTime createdAt,
+      OrderStatus status});
+
+  @override
+  $CartCopyWith<$Res> get cart;
+}
+
+/// @nodoc
+class __$$Order$CopyWithImpl<$Res> extends _$OrderCopyWithImpl<$Res, _$Order$> implements _$$Order$CopyWith<$Res> {
+  __$$Order$CopyWithImpl(_$Order$ _value, $Res Function(_$Order$) _then) : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? uid = null,
+    Object? cart = null,
+    Object? products = null,
+    Object? createdAt = null,
+    Object? status = null,
+  }) {
+    return _then(_$Order$(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      uid: null == uid
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
+      cart: null == cart
+          ? _value.cart
+          : cart // ignore: cast_nullable_to_non_nullable
+              as Cart,
+      products: null == products
+          ? _value._products
+          : products // ignore: cast_nullable_to_non_nullable
+              as List<Product>,
+      createdAt: null == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as OrderStatus,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$Order$ extends Order$ {
+  const _$Order$(
+      {@JsonSerializable(explicitToJson: true) required this.id,
+      required this.uid,
+      required this.cart,
+      final List<Product> products = const <Product>[],
+      required this.createdAt,
+      this.status = OrderStatus.submitted})
+      : _products = products,
+        super._();
+
+  factory _$Order$.fromJson(Map<String, dynamic> json) => _$$Order$FromJson(json);
+
+  @override
+  @JsonSerializable(explicitToJson: true)
+  final String id;
+  @override
+  final String uid;
+  @override
+  final Cart cart;
+  final List<Product> _products;
+  @override
+  @JsonKey()
+  List<Product> get products {
+    if (_products is EqualUnmodifiableListView) return _products;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_products);
+  }
+
+  @override
+  final DateTime createdAt;
+  @override
+  @JsonKey()
+  final OrderStatus status;
+
+  @override
+  String toString() {
+    return 'Order(id: $id, uid: $uid, cart: $cart, products: $products, createdAt: $createdAt, status: $status)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$Order$ &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.uid, uid) || other.uid == uid) &&
+            (identical(other.cart, cart) || other.cart == cart) &&
+            const DeepCollectionEquality().equals(other._products, _products) &&
+            (identical(other.createdAt, createdAt) || other.createdAt == createdAt) &&
+            (identical(other.status, status) || other.status == status));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, id, uid, cart, const DeepCollectionEquality().hash(_products), createdAt, status);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$Order$CopyWith<_$Order$> get copyWith => __$$Order$CopyWithImpl<_$Order$>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$Order$ToJson(
+      this,
+    );
+  }
+}
+
+abstract class Order$ extends Order {
+  const factory Order$(
+      {@JsonSerializable(explicitToJson: true) required final String id,
+      required final String uid,
+      required final Cart cart,
+      final List<Product> products,
+      required final DateTime createdAt,
+      final OrderStatus status}) = _$Order$;
+  const Order$._() : super._();
+
+  factory Order$.fromJson(Map<String, dynamic> json) = _$Order$.fromJson;
+
+  @override
+  @JsonSerializable(explicitToJson: true)
+  String get id;
+  @override
+  String get uid;
+  @override
+  Cart get cart;
+  @override
+  List<Product> get products;
+  @override
+  DateTime get createdAt;
+  @override
+  OrderStatus get status;
+  @override
+  @JsonKey(ignore: true)
+  _$$Order$CopyWith<_$Order$> get copyWith => throw _privateConstructorUsedError;
+}
+
+OrdersState _$OrdersStateFromJson(Map<String, dynamic> json) {
+  return OrdersState$.fromJson(json);
+}
+
+/// @nodoc
+mixin _$OrdersState {
+  List<Order> get orders => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $OrdersStateCopyWith<OrdersState> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $OrdersStateCopyWith<$Res> {
+  factory $OrdersStateCopyWith(OrdersState value, $Res Function(OrdersState) then) =
+      _$OrdersStateCopyWithImpl<$Res, OrdersState>;
+  @useResult
+  $Res call({List<Order> orders});
+}
+
+/// @nodoc
+class _$OrdersStateCopyWithImpl<$Res, $Val extends OrdersState> implements $OrdersStateCopyWith<$Res> {
+  _$OrdersStateCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? orders = null,
+  }) {
+    return _then(_value.copyWith(
+      orders: null == orders
+          ? _value.orders
+          : orders // ignore: cast_nullable_to_non_nullable
+              as List<Order>,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$OrdersState$CopyWith<$Res> implements $OrdersStateCopyWith<$Res> {
+  factory _$$OrdersState$CopyWith(_$OrdersState$ value, $Res Function(_$OrdersState$) then) =
+      __$$OrdersState$CopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({List<Order> orders});
+}
+
+/// @nodoc
+class __$$OrdersState$CopyWithImpl<$Res> extends _$OrdersStateCopyWithImpl<$Res, _$OrdersState$>
+    implements _$$OrdersState$CopyWith<$Res> {
+  __$$OrdersState$CopyWithImpl(_$OrdersState$ _value, $Res Function(_$OrdersState$) _then) : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? orders = null,
+  }) {
+    return _then(_$OrdersState$(
+      orders: null == orders
+          ? _value._orders
+          : orders // ignore: cast_nullable_to_non_nullable
+              as List<Order>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$OrdersState$ implements OrdersState$ {
+  const _$OrdersState$({final List<Order> orders = const <Order>[]}) : _orders = orders;
+
+  factory _$OrdersState$.fromJson(Map<String, dynamic> json) => _$$OrdersState$FromJson(json);
+
+  final List<Order> _orders;
+  @override
+  @JsonKey()
+  List<Order> get orders {
+    if (_orders is EqualUnmodifiableListView) return _orders;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_orders);
+  }
+
+  @override
+  String toString() {
+    return 'OrdersState(orders: $orders)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OrdersState$ &&
+            const DeepCollectionEquality().equals(other._orders, _orders));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_orders));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OrdersState$CopyWith<_$OrdersState$> get copyWith =>
+      __$$OrdersState$CopyWithImpl<_$OrdersState$>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$OrdersState$ToJson(
+      this,
+    );
+  }
+}
+
+abstract class OrdersState$ implements OrdersState {
+  const factory OrdersState$({final List<Order> orders}) = _$OrdersState$;
+
+  factory OrdersState$.fromJson(Map<String, dynamic> json) = _$OrdersState$.fromJson;
+
+  @override
+  List<Order> get orders;
+  @override
+  @JsonKey(ignore: true)
+  _$$OrdersState$CopyWith<_$OrdersState$> get copyWith => throw _privateConstructorUsedError;
+}
+
 AppState _$AppStateFromJson(Map<String, dynamic> json) {
   return AppState$.fromJson(json);
 }
@@ -1463,6 +1898,7 @@ mixin _$AppState {
   AuthState get auth => throw _privateConstructorUsedError;
   Set<String> get pendingActions => throw _privateConstructorUsedError;
   ProductsState get products => throw _privateConstructorUsedError;
+  OrdersState get order => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -1473,10 +1909,11 @@ mixin _$AppState {
 abstract class $AppStateCopyWith<$Res> {
   factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) = _$AppStateCopyWithImpl<$Res, AppState>;
   @useResult
-  $Res call({AuthState auth, Set<String> pendingActions, ProductsState products});
+  $Res call({AuthState auth, Set<String> pendingActions, ProductsState products, OrdersState order});
 
   $AuthStateCopyWith<$Res> get auth;
   $ProductsStateCopyWith<$Res> get products;
+  $OrdersStateCopyWith<$Res> get order;
 }
 
 /// @nodoc
@@ -1494,6 +1931,7 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState> implements $AppStateCo
     Object? auth = null,
     Object? pendingActions = null,
     Object? products = null,
+    Object? order = null,
   }) {
     return _then(_value.copyWith(
       auth: null == auth
@@ -1508,6 +1946,10 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState> implements $AppStateCo
           ? _value.products
           : products // ignore: cast_nullable_to_non_nullable
               as ProductsState,
+      order: null == order
+          ? _value.order
+          : order // ignore: cast_nullable_to_non_nullable
+              as OrdersState,
     ) as $Val);
   }
 
@@ -1526,6 +1968,14 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState> implements $AppStateCo
       return _then(_value.copyWith(products: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $OrdersStateCopyWith<$Res> get order {
+    return $OrdersStateCopyWith<$Res>(_value.order, (value) {
+      return _then(_value.copyWith(order: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -1533,12 +1983,14 @@ abstract class _$$AppState$CopyWith<$Res> implements $AppStateCopyWith<$Res> {
   factory _$$AppState$CopyWith(_$AppState$ value, $Res Function(_$AppState$) then) = __$$AppState$CopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({AuthState auth, Set<String> pendingActions, ProductsState products});
+  $Res call({AuthState auth, Set<String> pendingActions, ProductsState products, OrdersState order});
 
   @override
   $AuthStateCopyWith<$Res> get auth;
   @override
   $ProductsStateCopyWith<$Res> get products;
+  @override
+  $OrdersStateCopyWith<$Res> get order;
 }
 
 /// @nodoc
@@ -1552,6 +2004,7 @@ class __$$AppState$CopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res, _$App
     Object? auth = null,
     Object? pendingActions = null,
     Object? products = null,
+    Object? order = null,
   }) {
     return _then(_$AppState$(
       auth: null == auth
@@ -1566,6 +2019,10 @@ class __$$AppState$CopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res, _$App
           ? _value.products
           : products // ignore: cast_nullable_to_non_nullable
               as ProductsState,
+      order: null == order
+          ? _value.order
+          : order // ignore: cast_nullable_to_non_nullable
+              as OrdersState,
     ));
   }
 }
@@ -1576,7 +2033,8 @@ class _$AppState$ implements AppState$ {
   const _$AppState$(
       {this.auth = const AuthState(),
       final Set<String> pendingActions = const <String>{},
-      this.products = const ProductsState()})
+      this.products = const ProductsState(),
+      this.order = const OrdersState()})
       : _pendingActions = pendingActions;
 
   factory _$AppState$.fromJson(Map<String, dynamic> json) => _$$AppState$FromJson(json);
@@ -1596,10 +2054,13 @@ class _$AppState$ implements AppState$ {
   @override
   @JsonKey()
   final ProductsState products;
+  @override
+  @JsonKey()
+  final OrdersState order;
 
   @override
   String toString() {
-    return 'AppState(auth: $auth, pendingActions: $pendingActions, products: $products)';
+    return 'AppState(auth: $auth, pendingActions: $pendingActions, products: $products, order: $order)';
   }
 
   @override
@@ -1609,12 +2070,14 @@ class _$AppState$ implements AppState$ {
             other is _$AppState$ &&
             (identical(other.auth, auth) || other.auth == auth) &&
             const DeepCollectionEquality().equals(other._pendingActions, _pendingActions) &&
-            (identical(other.products, products) || other.products == products));
+            (identical(other.products, products) || other.products == products) &&
+            (identical(other.order, order) || other.order == order));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, auth, const DeepCollectionEquality().hash(_pendingActions), products);
+  int get hashCode =>
+      Object.hash(runtimeType, auth, const DeepCollectionEquality().hash(_pendingActions), products, order);
 
   @JsonKey(ignore: true)
   @override
@@ -1630,8 +2093,11 @@ class _$AppState$ implements AppState$ {
 }
 
 abstract class AppState$ implements AppState {
-  const factory AppState$({final AuthState auth, final Set<String> pendingActions, final ProductsState products}) =
-      _$AppState$;
+  const factory AppState$(
+      {final AuthState auth,
+      final Set<String> pendingActions,
+      final ProductsState products,
+      final OrdersState order}) = _$AppState$;
 
   factory AppState$.fromJson(Map<String, dynamic> json) = _$AppState$.fromJson;
 
@@ -1641,6 +2107,8 @@ abstract class AppState$ implements AppState {
   Set<String> get pendingActions;
   @override
   ProductsState get products;
+  @override
+  OrdersState get order;
   @override
   @JsonKey(ignore: true)
   _$$AppState$CopyWith<_$AppState$> get copyWith => throw _privateConstructorUsedError;

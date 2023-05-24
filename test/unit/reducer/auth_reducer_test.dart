@@ -12,7 +12,8 @@ Future<void> main() async {
   });
 
   group('InitializeAppSuccessful', () {
-    const AppUser user = AppUser(uid: 'uid', email: 'email', displayName: 'displayName');
+    const AppUser user =
+        AppUser(uid: 'uid', email: 'email', displayName: 'displayName');
 
     test('user null', () {
       state = state.copyWith(user: user);
@@ -38,6 +39,7 @@ Future<void> main() async {
     //add, no item
     final AuthState newState = authReducer(state, action);
     expect(newState.cart.items, isNotEmpty);
-    expect(newState.cart.items.first, const CartItem(productId: '1', quantity: 1));
+    expect(
+        newState.cart.items.first, const CartItem(productId: '1', quantity: 1));
   });
 }

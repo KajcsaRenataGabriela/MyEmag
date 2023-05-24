@@ -2741,6 +2741,522 @@ abstract class UpdateProfileUrlError implements UpdateProfileUrl, StopAction {
 }
 
 /// @nodoc
+mixin _$SubmitOrder {
+  String get pendingId => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SubmitOrderStart value) start,
+    required TResult Function(SubmitOrderSuccessful value) successful,
+    required TResult Function(SubmitOrderError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SubmitOrderStart value)? start,
+    TResult? Function(SubmitOrderSuccessful value)? successful,
+    TResult? Function(SubmitOrderError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SubmitOrderStart value)? start,
+    TResult Function(SubmitOrderSuccessful value)? successful,
+    TResult Function(SubmitOrderError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $SubmitOrderCopyWith<SubmitOrder> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SubmitOrderCopyWith<$Res> {
+  factory $SubmitOrderCopyWith(SubmitOrder value, $Res Function(SubmitOrder) then) =
+      _$SubmitOrderCopyWithImpl<$Res, SubmitOrder>;
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$SubmitOrderCopyWithImpl<$Res, $Val extends SubmitOrder> implements $SubmitOrderCopyWith<$Res> {
+  _$SubmitOrderCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$SubmitOrderStartCopyWith<$Res> implements $SubmitOrderCopyWith<$Res> {
+  factory _$$SubmitOrderStartCopyWith(_$SubmitOrderStart value, $Res Function(_$SubmitOrderStart) then) =
+      __$$SubmitOrderStartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class __$$SubmitOrderStartCopyWithImpl<$Res> extends _$SubmitOrderCopyWithImpl<$Res, _$SubmitOrderStart>
+    implements _$$SubmitOrderStartCopyWith<$Res> {
+  __$$SubmitOrderStartCopyWithImpl(_$SubmitOrderStart _value, $Res Function(_$SubmitOrderStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_$SubmitOrderStart(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SubmitOrderStart implements SubmitOrderStart {
+  const _$SubmitOrderStart({this.pendingId = _kSubmitOrderPendingId});
+
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'SubmitOrder.start(pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SubmitOrderStart &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SubmitOrderStartCopyWith<_$SubmitOrderStart> get copyWith =>
+      __$$SubmitOrderStartCopyWithImpl<_$SubmitOrderStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return start(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return start?.call(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SubmitOrderStart value) start,
+    required TResult Function(SubmitOrderSuccessful value) successful,
+    required TResult Function(SubmitOrderError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SubmitOrderStart value)? start,
+    TResult? Function(SubmitOrderSuccessful value)? successful,
+    TResult? Function(SubmitOrderError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SubmitOrderStart value)? start,
+    TResult Function(SubmitOrderSuccessful value)? successful,
+    TResult Function(SubmitOrderError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SubmitOrderStart implements SubmitOrder, StartAction {
+  const factory SubmitOrderStart({final String pendingId}) = _$SubmitOrderStart;
+
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$SubmitOrderStartCopyWith<_$SubmitOrderStart> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SubmitOrderSuccessfulCopyWith<$Res> implements $SubmitOrderCopyWith<$Res> {
+  factory _$$SubmitOrderSuccessfulCopyWith(_$SubmitOrderSuccessful value, $Res Function(_$SubmitOrderSuccessful) then) =
+      __$$SubmitOrderSuccessfulCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class __$$SubmitOrderSuccessfulCopyWithImpl<$Res> extends _$SubmitOrderCopyWithImpl<$Res, _$SubmitOrderSuccessful>
+    implements _$$SubmitOrderSuccessfulCopyWith<$Res> {
+  __$$SubmitOrderSuccessfulCopyWithImpl(_$SubmitOrderSuccessful _value, $Res Function(_$SubmitOrderSuccessful) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_$SubmitOrderSuccessful(
+      null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SubmitOrderSuccessful implements SubmitOrderSuccessful {
+  const _$SubmitOrderSuccessful([this.pendingId = _kSubmitOrderPendingId]);
+
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'SubmitOrder.successful(pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SubmitOrderSuccessful &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SubmitOrderSuccessfulCopyWith<_$SubmitOrderSuccessful> get copyWith =>
+      __$$SubmitOrderSuccessfulCopyWithImpl<_$SubmitOrderSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return successful(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return successful?.call(pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SubmitOrderStart value) start,
+    required TResult Function(SubmitOrderSuccessful value) successful,
+    required TResult Function(SubmitOrderError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SubmitOrderStart value)? start,
+    TResult? Function(SubmitOrderSuccessful value)? successful,
+    TResult? Function(SubmitOrderError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SubmitOrderStart value)? start,
+    TResult Function(SubmitOrderSuccessful value)? successful,
+    TResult Function(SubmitOrderError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SubmitOrderSuccessful implements SubmitOrder, StopAction {
+  const factory SubmitOrderSuccessful([final String pendingId]) = _$SubmitOrderSuccessful;
+
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$SubmitOrderSuccessfulCopyWith<_$SubmitOrderSuccessful> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SubmitOrderErrorCopyWith<$Res> implements $SubmitOrderCopyWith<$Res> {
+  factory _$$SubmitOrderErrorCopyWith(_$SubmitOrderError value, $Res Function(_$SubmitOrderError) then) =
+      __$$SubmitOrderErrorCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class __$$SubmitOrderErrorCopyWithImpl<$Res> extends _$SubmitOrderCopyWithImpl<$Res, _$SubmitOrderError>
+    implements _$$SubmitOrderErrorCopyWith<$Res> {
+  __$$SubmitOrderErrorCopyWithImpl(_$SubmitOrderError _value, $Res Function(_$SubmitOrderError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$SubmitOrderError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SubmitOrderError implements SubmitOrderError {
+  const _$SubmitOrderError(this.error, this.stackTrace, [this.pendingId = _kSubmitOrderPendingId]);
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'SubmitOrder.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SubmitOrderError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) || other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SubmitOrderErrorCopyWith<_$SubmitOrderError> get copyWith =>
+      __$$SubmitOrderErrorCopyWithImpl<_$SubmitOrderError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String pendingId) start,
+    required TResult Function(String pendingId) successful,
+    required TResult Function(Object error, StackTrace stackTrace, String pendingId) error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String pendingId)? start,
+    TResult? Function(String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)? error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String pendingId)? start,
+    TResult Function(String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SubmitOrderStart value) start,
+    required TResult Function(SubmitOrderSuccessful value) successful,
+    required TResult Function(SubmitOrderError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SubmitOrderStart value)? start,
+    TResult? Function(SubmitOrderSuccessful value)? successful,
+    TResult? Function(SubmitOrderError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SubmitOrderStart value)? start,
+    TResult Function(SubmitOrderSuccessful value)? successful,
+    TResult Function(SubmitOrderError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SubmitOrderError implements SubmitOrder, StopAction {
+  const factory SubmitOrderError(final Object error, final StackTrace stackTrace, [final String pendingId]) =
+      _$SubmitOrderError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$SubmitOrderErrorCopyWith<_$SubmitOrderError> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$ListCategory {
   String get pendingId => throw _privateConstructorUsedError;
   @optionalTypeArgs

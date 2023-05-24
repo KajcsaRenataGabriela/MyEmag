@@ -3,7 +3,7 @@ part of '../index.dart';
 @freezed
 class Category with _$Category implements Comparable<Category> {
   const factory Category({
-    required String id,
+    @JsonSerializable(explicitToJson: true) required String id,
     required String title,
     required int icon,
   }) = Category$;

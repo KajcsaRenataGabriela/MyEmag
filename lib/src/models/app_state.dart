@@ -6,6 +6,7 @@ class AppState with _$AppState {
     @Default(AuthState()) AuthState auth,
     @Default(<String>{}) Set<String> pendingActions,
     @Default(ProductsState()) ProductsState products,
+    @Default(OrdersState()) OrdersState order,
   }) = AppState$;
 
   factory AppState.fromJson(Map<dynamic, dynamic> json) => _$AppStateFromJson(Map<String, dynamic>.from(json));

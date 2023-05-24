@@ -6,6 +6,7 @@ import '../models/index.dart';
 Reducer<AuthState> authReducer = combineReducers(<Reducer<AuthState>>[
   TypedReducer<AuthState, InitializeAppSuccessful>(_initializeAppSuccessful).call,
   TypedReducer<AuthState, UpdateCart>(_updateCart).call,
+  TypedReducer<AuthState, SubmitOrderSuccessful>(_submitOrderSuccessful).call,
 ]);
 
 AuthState _initializeAppSuccessful(AuthState state, InitializeAppSuccessful action) {
@@ -34,4 +35,8 @@ AuthState _updateCart(AuthState state, UpdateCart action) {
     }
   }
   return state.copyWith(cart: state.cart.copyWith(items: items));
+}
+
+AuthState _submitOrderSuccessful(AuthState state, SubmitOrderSuccessful action) {
+  return state.copyWith(cart: const Cart());
 }

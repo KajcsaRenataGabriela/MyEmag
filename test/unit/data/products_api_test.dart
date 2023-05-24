@@ -28,12 +28,14 @@ Future<void> main() async {
 
     when(() => firestore.collection(captureAny())).thenReturn(collection);
     when(() => collection.get()).thenAnswer((_) async => querySnapshot);
-    when(() => querySnapshot.docs).thenReturn(<QueryDocumentSnapshotMock>[docSnapshot]);
+    when(() => querySnapshot.docs)
+        .thenReturn(<QueryDocumentSnapshotMock>[docSnapshot]);
     when(() => docSnapshot.data()).thenReturn(category.toJson());
 
     final List<Category> result = await api.listCategory();
 
-    final VerificationResult verifyResult = verify(() => firestore.collection(captureAny()));
+    final VerificationResult verifyResult =
+        verify(() => firestore.collection(captureAny()));
     expect(verifyResult.captured.first, 'categories');
     expect(result, isNotEmpty);
     expect(result.first, category);
@@ -43,8 +45,11 @@ Future<void> main() async {
 
 class FirebaseFirestoreMock extends Mock implements FirebaseFirestore {}
 
-class CollectionReferenceMock extends Mock implements CollectionReference<Map<String, dynamic>> {}
+class CollectionReferenceMock extends Mock
+    implements CollectionReference<Map<String, dynamic>> {}
 
-class QuerySnapshotMock extends Mock implements QuerySnapshot<Map<String, dynamic>> {}
+class QuerySnapshotMock extends Mock
+    implements QuerySnapshot<Map<String, dynamic>> {}
 
-class QueryDocumentSnapshotMock extends Mock implements QueryDocumentSnapshot<Map<String, dynamic>> {}
+class QueryDocumentSnapshotMock extends Mock
+    implements QueryDocumentSnapshot<Map<String, dynamic>> {}

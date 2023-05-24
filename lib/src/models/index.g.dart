@@ -119,16 +119,53 @@ Map<String, dynamic> _$$Vendor$ToJson(_$Vendor$ instance) => <String, dynamic>{
       'description': instance.description,
     };
 
+_$Order$ _$$Order$FromJson(Map<String, dynamic> json) => _$Order$(
+      id: json['id'] as String,
+      uid: json['uid'] as String,
+      cart: Cart.fromJson(json['cart'] as Map<String, dynamic>),
+      products:
+          (json['products'] as List<dynamic>?)?.map((e) => Product.fromJson(e as Map<String, dynamic>)).toList() ??
+              const <Product>[],
+      createdAt: DateTime.parse(json['createdAt'] as String),
+      status: $enumDecodeNullable(_$OrderStatusEnumMap, json['status']) ?? OrderStatus.submitted,
+    );
+
+Map<String, dynamic> _$$Order$ToJson(_$Order$ instance) => <String, dynamic>{
+      'id': instance.id,
+      'uid': instance.uid,
+      'cart': instance.cart,
+      'products': instance.products,
+      'createdAt': instance.createdAt.toIso8601String(),
+      'status': _$OrderStatusEnumMap[instance.status]!,
+    };
+
+const _$OrderStatusEnumMap = {
+  OrderStatus.submitted: 'submitted',
+  OrderStatus.shipped: 'shipped',
+  OrderStatus.received: 'received',
+};
+
+_$OrdersState$ _$$OrdersState$FromJson(Map<String, dynamic> json) => _$OrdersState$(
+      orders: (json['orders'] as List<dynamic>?)?.map((e) => Order.fromJson(e as Map<String, dynamic>)).toList() ??
+          const <Order>[],
+    );
+
+Map<String, dynamic> _$$OrdersState$ToJson(_$OrdersState$ instance) => <String, dynamic>{
+      'orders': instance.orders,
+    };
+
 _$AppState$ _$$AppState$FromJson(Map<String, dynamic> json) => _$AppState$(
       auth: json['auth'] == null ? const AuthState() : AuthState.fromJson(json['auth'] as Map<String, dynamic>),
       pendingActions: (json['pendingActions'] as List<dynamic>?)?.map((e) => e as String).toSet() ?? const <String>{},
       products: json['products'] == null
           ? const ProductsState()
           : ProductsState.fromJson(json['products'] as Map<String, dynamic>),
+      order: json['order'] == null ? const OrdersState() : OrdersState.fromJson(json['order'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$AppState$ToJson(_$AppState$ instance) => <String, dynamic>{
       'auth': instance.auth,
       'pendingActions': instance.pendingActions.toList(),
       'products': instance.products,
+      'order': instance.order,
     };
