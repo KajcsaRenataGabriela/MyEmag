@@ -9,6 +9,7 @@ part 'auth/initialize_app.dart';
 part 'auth/update_cart.dart';
 part 'auth/update_profile_url.dart';
 part 'orders/submit_order.dart';
+part 'orders/listen_to_orders.dart';
 part 'index.freezed.dart';
 part 'products/list_category.dart';
 part 'products/list_products.dart';

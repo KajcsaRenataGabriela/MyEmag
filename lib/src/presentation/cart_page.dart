@@ -95,9 +95,11 @@ class CartPage extends StatelessWidget {
                                 style: const TextStyle(fontSize: 26),
                               ),
                               trailing: ElevatedButton(
-                                onPressed: () {
-                                  StoreProvider.of<AppState>(context).dispatch(const SubmitOrder.start());
-                                },
+                                onPressed: pending.contains(SubmitOrder.pendingKey)
+                                    ? null
+                                    : () {
+                                        StoreProvider.of<AppState>(context).dispatch(const SubmitOrder.start());
+                                      },
                                 child: const Text(
                                   'Order ',
                                   style: TextStyle(fontSize: 26),

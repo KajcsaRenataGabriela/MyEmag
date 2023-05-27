@@ -20,4 +20,17 @@ class OrdersApi {
 
     await ref.set(order.toJson());
   }
+
+  Stream<List<Order$>> listenToOrders(String uid) {
+    return _firestore
+        .collection('orders')
+        .where('uid', isEqualTo: uid)
+        .orderBy('createdAt', descending: true)
+        .snapshots()
+        .map((QuerySnapshot<Map<String, dynamic>> snapshot) {
+      return snapshot.docs
+          .map((QueryDocumentSnapshot<Map<String, dynamic>> doc) => Order$.fromJson(doc.data()))
+          .toList();
+    });
+  }
 }

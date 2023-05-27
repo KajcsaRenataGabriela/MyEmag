@@ -3257,6 +3257,588 @@ abstract class SubmitOrderError implements SubmitOrder, StopAction {
 }
 
 /// @nodoc
+mixin _$ListenToOrders {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() start,
+    required TResult Function() done,
+    required TResult Function(List<Order> orders) event,
+    required TResult Function(Object error, StackTrace stackTrace) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? start,
+    TResult? Function()? done,
+    TResult? Function(List<Order> orders)? event,
+    TResult? Function(Object error, StackTrace stackTrace)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? start,
+    TResult Function()? done,
+    TResult Function(List<Order> orders)? event,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ListenToOrdersStart value) start,
+    required TResult Function(ListenToOrdersDone value) done,
+    required TResult Function(OnOrdersEvent value) event,
+    required TResult Function(ListenToOrdersError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ListenToOrdersStart value)? start,
+    TResult? Function(ListenToOrdersDone value)? done,
+    TResult? Function(OnOrdersEvent value)? event,
+    TResult? Function(ListenToOrdersError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ListenToOrdersStart value)? start,
+    TResult Function(ListenToOrdersDone value)? done,
+    TResult Function(OnOrdersEvent value)? event,
+    TResult Function(ListenToOrdersError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ListenToOrdersCopyWith<$Res> {
+  factory $ListenToOrdersCopyWith(ListenToOrders value, $Res Function(ListenToOrders) then) =
+      _$ListenToOrdersCopyWithImpl<$Res, ListenToOrders>;
+}
+
+/// @nodoc
+class _$ListenToOrdersCopyWithImpl<$Res, $Val extends ListenToOrders> implements $ListenToOrdersCopyWith<$Res> {
+  _$ListenToOrdersCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+}
+
+/// @nodoc
+abstract class _$$ListenToOrdersStartCopyWith<$Res> {
+  factory _$$ListenToOrdersStartCopyWith(_$ListenToOrdersStart value, $Res Function(_$ListenToOrdersStart) then) =
+      __$$ListenToOrdersStartCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ListenToOrdersStartCopyWithImpl<$Res> extends _$ListenToOrdersCopyWithImpl<$Res, _$ListenToOrdersStart>
+    implements _$$ListenToOrdersStartCopyWith<$Res> {
+  __$$ListenToOrdersStartCopyWithImpl(_$ListenToOrdersStart _value, $Res Function(_$ListenToOrdersStart) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ListenToOrdersStart implements ListenToOrdersStart {
+  const _$ListenToOrdersStart();
+
+  @override
+  String toString() {
+    return 'ListenToOrders.start()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$ListenToOrdersStart);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() start,
+    required TResult Function() done,
+    required TResult Function(List<Order> orders) event,
+    required TResult Function(Object error, StackTrace stackTrace) error,
+  }) {
+    return start();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? start,
+    TResult? Function()? done,
+    TResult? Function(List<Order> orders)? event,
+    TResult? Function(Object error, StackTrace stackTrace)? error,
+  }) {
+    return start?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? start,
+    TResult Function()? done,
+    TResult Function(List<Order> orders)? event,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ListenToOrdersStart value) start,
+    required TResult Function(ListenToOrdersDone value) done,
+    required TResult Function(OnOrdersEvent value) event,
+    required TResult Function(ListenToOrdersError value) error,
+  }) {
+    return start(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ListenToOrdersStart value)? start,
+    TResult? Function(ListenToOrdersDone value)? done,
+    TResult? Function(OnOrdersEvent value)? event,
+    TResult? Function(ListenToOrdersError value)? error,
+  }) {
+    return start?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ListenToOrdersStart value)? start,
+    TResult Function(ListenToOrdersDone value)? done,
+    TResult Function(OnOrdersEvent value)? event,
+    TResult Function(ListenToOrdersError value)? error,
+    required TResult orElse(),
+  }) {
+    if (start != null) {
+      return start(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ListenToOrdersStart implements ListenToOrders {
+  const factory ListenToOrdersStart() = _$ListenToOrdersStart;
+}
+
+/// @nodoc
+abstract class _$$ListenToOrdersDoneCopyWith<$Res> {
+  factory _$$ListenToOrdersDoneCopyWith(_$ListenToOrdersDone value, $Res Function(_$ListenToOrdersDone) then) =
+      __$$ListenToOrdersDoneCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ListenToOrdersDoneCopyWithImpl<$Res> extends _$ListenToOrdersCopyWithImpl<$Res, _$ListenToOrdersDone>
+    implements _$$ListenToOrdersDoneCopyWith<$Res> {
+  __$$ListenToOrdersDoneCopyWithImpl(_$ListenToOrdersDone _value, $Res Function(_$ListenToOrdersDone) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ListenToOrdersDone implements ListenToOrdersDone {
+  const _$ListenToOrdersDone();
+
+  @override
+  String toString() {
+    return 'ListenToOrders.done()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$ListenToOrdersDone);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() start,
+    required TResult Function() done,
+    required TResult Function(List<Order> orders) event,
+    required TResult Function(Object error, StackTrace stackTrace) error,
+  }) {
+    return done();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? start,
+    TResult? Function()? done,
+    TResult? Function(List<Order> orders)? event,
+    TResult? Function(Object error, StackTrace stackTrace)? error,
+  }) {
+    return done?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? start,
+    TResult Function()? done,
+    TResult Function(List<Order> orders)? event,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+    required TResult orElse(),
+  }) {
+    if (done != null) {
+      return done();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ListenToOrdersStart value) start,
+    required TResult Function(ListenToOrdersDone value) done,
+    required TResult Function(OnOrdersEvent value) event,
+    required TResult Function(ListenToOrdersError value) error,
+  }) {
+    return done(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ListenToOrdersStart value)? start,
+    TResult? Function(ListenToOrdersDone value)? done,
+    TResult? Function(OnOrdersEvent value)? event,
+    TResult? Function(ListenToOrdersError value)? error,
+  }) {
+    return done?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ListenToOrdersStart value)? start,
+    TResult Function(ListenToOrdersDone value)? done,
+    TResult Function(OnOrdersEvent value)? event,
+    TResult Function(ListenToOrdersError value)? error,
+    required TResult orElse(),
+  }) {
+    if (done != null) {
+      return done(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ListenToOrdersDone implements ListenToOrders {
+  const factory ListenToOrdersDone() = _$ListenToOrdersDone;
+}
+
+/// @nodoc
+abstract class _$$OnOrdersEventCopyWith<$Res> {
+  factory _$$OnOrdersEventCopyWith(_$OnOrdersEvent value, $Res Function(_$OnOrdersEvent) then) =
+      __$$OnOrdersEventCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<Order> orders});
+}
+
+/// @nodoc
+class __$$OnOrdersEventCopyWithImpl<$Res> extends _$ListenToOrdersCopyWithImpl<$Res, _$OnOrdersEvent>
+    implements _$$OnOrdersEventCopyWith<$Res> {
+  __$$OnOrdersEventCopyWithImpl(_$OnOrdersEvent _value, $Res Function(_$OnOrdersEvent) _then) : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? orders = null,
+  }) {
+    return _then(_$OnOrdersEvent(
+      null == orders
+          ? _value._orders
+          : orders // ignore: cast_nullable_to_non_nullable
+              as List<Order>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$OnOrdersEvent implements OnOrdersEvent {
+  const _$OnOrdersEvent(final List<Order> orders) : _orders = orders;
+
+  final List<Order> _orders;
+  @override
+  List<Order> get orders {
+    if (_orders is EqualUnmodifiableListView) return _orders;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_orders);
+  }
+
+  @override
+  String toString() {
+    return 'ListenToOrders.event(orders: $orders)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OnOrdersEvent &&
+            const DeepCollectionEquality().equals(other._orders, _orders));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_orders));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OnOrdersEventCopyWith<_$OnOrdersEvent> get copyWith =>
+      __$$OnOrdersEventCopyWithImpl<_$OnOrdersEvent>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() start,
+    required TResult Function() done,
+    required TResult Function(List<Order> orders) event,
+    required TResult Function(Object error, StackTrace stackTrace) error,
+  }) {
+    return event(orders);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? start,
+    TResult? Function()? done,
+    TResult? Function(List<Order> orders)? event,
+    TResult? Function(Object error, StackTrace stackTrace)? error,
+  }) {
+    return event?.call(orders);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? start,
+    TResult Function()? done,
+    TResult Function(List<Order> orders)? event,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+    required TResult orElse(),
+  }) {
+    if (event != null) {
+      return event(orders);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ListenToOrdersStart value) start,
+    required TResult Function(ListenToOrdersDone value) done,
+    required TResult Function(OnOrdersEvent value) event,
+    required TResult Function(ListenToOrdersError value) error,
+  }) {
+    return event(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ListenToOrdersStart value)? start,
+    TResult? Function(ListenToOrdersDone value)? done,
+    TResult? Function(OnOrdersEvent value)? event,
+    TResult? Function(ListenToOrdersError value)? error,
+  }) {
+    return event?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ListenToOrdersStart value)? start,
+    TResult Function(ListenToOrdersDone value)? done,
+    TResult Function(OnOrdersEvent value)? event,
+    TResult Function(ListenToOrdersError value)? error,
+    required TResult orElse(),
+  }) {
+    if (event != null) {
+      return event(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class OnOrdersEvent implements ListenToOrders {
+  const factory OnOrdersEvent(final List<Order> orders) = _$OnOrdersEvent;
+
+  List<Order> get orders;
+  @JsonKey(ignore: true)
+  _$$OnOrdersEventCopyWith<_$OnOrdersEvent> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ListenToOrdersErrorCopyWith<$Res> {
+  factory _$$ListenToOrdersErrorCopyWith(_$ListenToOrdersError value, $Res Function(_$ListenToOrdersError) then) =
+      __$$ListenToOrdersErrorCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Object error, StackTrace stackTrace});
+}
+
+/// @nodoc
+class __$$ListenToOrdersErrorCopyWithImpl<$Res> extends _$ListenToOrdersCopyWithImpl<$Res, _$ListenToOrdersError>
+    implements _$$ListenToOrdersErrorCopyWith<$Res> {
+  __$$ListenToOrdersErrorCopyWithImpl(_$ListenToOrdersError _value, $Res Function(_$ListenToOrdersError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+  }) {
+    return _then(_$ListenToOrdersError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ListenToOrdersError implements ListenToOrdersError {
+  const _$ListenToOrdersError(this.error, this.stackTrace);
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+
+  @override
+  String toString() {
+    return 'ListenToOrders.error(error: $error, stackTrace: $stackTrace)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ListenToOrdersError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) || other.stackTrace == stackTrace));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ListenToOrdersErrorCopyWith<_$ListenToOrdersError> get copyWith =>
+      __$$ListenToOrdersErrorCopyWithImpl<_$ListenToOrdersError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() start,
+    required TResult Function() done,
+    required TResult Function(List<Order> orders) event,
+    required TResult Function(Object error, StackTrace stackTrace) error,
+  }) {
+    return error(this.error, stackTrace);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? start,
+    TResult? Function()? done,
+    TResult? Function(List<Order> orders)? event,
+    TResult? Function(Object error, StackTrace stackTrace)? error,
+  }) {
+    return error?.call(this.error, stackTrace);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? start,
+    TResult Function()? done,
+    TResult Function(List<Order> orders)? event,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ListenToOrdersStart value) start,
+    required TResult Function(ListenToOrdersDone value) done,
+    required TResult Function(OnOrdersEvent value) event,
+    required TResult Function(ListenToOrdersError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ListenToOrdersStart value)? start,
+    TResult? Function(ListenToOrdersDone value)? done,
+    TResult? Function(OnOrdersEvent value)? event,
+    TResult? Function(ListenToOrdersError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ListenToOrdersStart value)? start,
+    TResult Function(ListenToOrdersDone value)? done,
+    TResult Function(OnOrdersEvent value)? event,
+    TResult Function(ListenToOrdersError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ListenToOrdersError implements ListenToOrders {
+  const factory ListenToOrdersError(final Object error, final StackTrace stackTrace) = _$ListenToOrdersError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @JsonKey(ignore: true)
+  _$$ListenToOrdersErrorCopyWith<_$ListenToOrdersError> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$ListCategory {
   String get pendingId => throw _privateConstructorUsedError;
   @optionalTypeArgs

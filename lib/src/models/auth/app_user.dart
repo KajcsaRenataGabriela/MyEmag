@@ -2,8 +2,9 @@ part of '../index.dart';
 
 @freezed
 class AppUser with _$AppUser {
+  @JsonSerializable(explicitToJson: true)
   const factory AppUser({
-    @JsonSerializable(explicitToJson: true) required String uid,
+    required String uid,
     required String email,
     required String displayName,
     String? pictureUrl,

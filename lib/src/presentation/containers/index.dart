@@ -13,3 +13,4 @@ part 'products_container.dart';
 part 'vendors_container.dart';
 part 'cart_container.dart';
 part 'products_ids_container.dart';
+part 'orders_container.dart';

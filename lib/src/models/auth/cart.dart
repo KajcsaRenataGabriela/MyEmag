@@ -2,8 +2,9 @@ part of '../index.dart';
 
 @freezed
 class Cart with _$Cart {
+  @JsonSerializable(explicitToJson: true)
   const factory Cart({
-    @JsonSerializable(explicitToJson: true) @Default(<CartItem>[]) List<CartItem> items,
+    @Default(<CartItem>[]) List<CartItem> items,
   }) = Cart$;
 
   factory Cart.fromJson(Map<dynamic, dynamic> json) => _$CartFromJson(Map<String, dynamic>.from(json));
@@ -11,8 +12,9 @@ class Cart with _$Cart {
 
 @freezed
 class CartItem with _$CartItem {
+  @JsonSerializable(explicitToJson: true)
   const factory CartItem({
-    @JsonSerializable(explicitToJson: true) required String productId,
+    required String productId,
     required int quantity,
   }) = CartItem$;
 

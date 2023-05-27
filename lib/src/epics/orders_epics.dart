@@ -14,6 +14,7 @@ class OrdersEpics implements EpicClass<AppState> {
   Stream<dynamic> call(Stream<dynamic> actions, EpicStore<AppState> store) {
     return combineEpics(<Epic<AppState>>[
       TypedEpic<AppState, SubmitOrderStart>(_submitOrderStart).call,
+      _listenToOrders,
     ])(actions, store);
   }
 
@@ -29,6 +30,16 @@ class OrdersEpics implements EpicClass<AppState> {
           })
           .mapTo(const SubmitOrder.successful())
           .onErrorReturnWith((Object error, StackTrace stackTrace) => SubmitOrderError(error, stackTrace));
+    });
+  }
+
+  Stream<dynamic> _listenToOrders(Stream<dynamic> actions, EpicStore<AppState> store) {
+    return actions.whereType<ListenToOrdersStart>().flatMap((ListenToOrdersStart action) {
+      return Stream<void>.value(null)
+          .flatMap((_) => _api.listenToOrders(store.state.auth.user!.uid))
+          .takeUntil(actions.whereType<ListenToOrdersDone>())
+          .map((List<Order$> orders) => ListenToOrders.event(orders))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => ListenToOrders.error(error, stackTrace));
     });
   }
 }

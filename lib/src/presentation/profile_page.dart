@@ -41,6 +41,7 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: SafeArea(
           child: Padding(
         padding: const EdgeInsets.all(32.0),
@@ -86,6 +87,12 @@ class ProfilePage extends StatelessWidget {
                 }),
               ),
             ),
+            ListTile(
+              title: const Text('Your orders'),
+              onTap: () {
+                Navigator.pushNamed(context, '/orders');
+              },
+            )
           ],
         ),
       )),

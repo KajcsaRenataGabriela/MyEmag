@@ -26,8 +26,8 @@ _$AuthState$ _$$AuthState$FromJson(Map<String, dynamic> json) => _$AuthState$(
     );
 
 Map<String, dynamic> _$$AuthState$ToJson(_$AuthState$ instance) => <String, dynamic>{
-      'user': instance.user,
-      'cart': instance.cart,
+      'user': instance.user?.toJson(),
+      'cart': instance.cart.toJson(),
     };
 
 _$Cart$ _$$Cart$FromJson(Map<String, dynamic> json) => _$Cart$(
@@ -36,7 +36,7 @@ _$Cart$ _$$Cart$FromJson(Map<String, dynamic> json) => _$Cart$(
     );
 
 Map<String, dynamic> _$$Cart$ToJson(_$Cart$ instance) => <String, dynamic>{
-      'items': instance.items,
+      'items': instance.items.map((e) => e.toJson()).toList(),
     };
 
 _$CartItem$ _$$CartItem$FromJson(Map<String, dynamic> json) => _$CartItem$(
@@ -133,8 +133,8 @@ _$Order$ _$$Order$FromJson(Map<String, dynamic> json) => _$Order$(
 Map<String, dynamic> _$$Order$ToJson(_$Order$ instance) => <String, dynamic>{
       'id': instance.id,
       'uid': instance.uid,
-      'cart': instance.cart,
-      'products': instance.products,
+      'cart': instance.cart.toJson(),
+      'products': instance.products.map((e) => e.toJson()).toList(),
       'createdAt': instance.createdAt.toIso8601String(),
       'status': _$OrderStatusEnumMap[instance.status]!,
     };

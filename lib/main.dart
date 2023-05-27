@@ -22,6 +22,7 @@ import 'src/presentation/containers/index.dart';
 import 'src/presentation/create_user_page.dart';
 import 'src/presentation/home_page.dart';
 import 'src/presentation/login_page.dart';
+import 'src/presentation/orders_page.dart';
 import 'src/presentation/product_page.dart';
 import 'src/presentation/profile_page.dart';
 import 'src/reducer/reducer.dart';
@@ -82,6 +83,7 @@ class MyApp extends StatelessWidget {
           '/product': (BuildContext context) => const ProductPage(),
           '/cart': (BuildContext context) => const CartPage(),
           '/profile': (BuildContext context) => const ProfilePage(),
+          '/orders': (BuildContext context) => const OrdersPage(),
         },
       ),
     );

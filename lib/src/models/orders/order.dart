@@ -8,8 +8,9 @@ enum OrderStatus {
 
 @freezed
 class Order with _$Order implements Comparable<Order> {
+  @JsonSerializable(explicitToJson: true)
   const factory Order({
-    @JsonSerializable(explicitToJson: true) required String id,
+    required String id,
     required String uid,
     required Cart cart,
     @Default(<Product>[]) List<Product> products,

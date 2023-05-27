@@ -2,8 +2,9 @@ part of '../index.dart';
 
 @freezed
 class AuthState with _$AuthState {
+  @JsonSerializable(explicitToJson: true)
   const factory AuthState({
-    @JsonSerializable(explicitToJson: true) AppUser? user,
+    AppUser? user,
     @Default(Cart()) Cart cart,
   }) = AuthState$;
 
