@@ -4,11 +4,15 @@ Flutter project that replicates ermag.ro
 Perks:
 * **redux** 
 * freezed annotations
-* firebase database usage
+* used analysis_options
+* firebase + firestore
 * pending actions implemented
 * create user + login user + logout
 * products based on categories with vendors
 * shopping cart
+* account profile
+* unit tests
+* order functionality
 
 Here is a video of the app:
 
