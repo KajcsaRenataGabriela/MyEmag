@@ -45,36 +45,41 @@ class _OrdersPageState extends State<OrdersPage> {
               final Order order = orders[index];
 
               return Column(
-                children: order.cart.items.map((CartItem item) {
-                  final Product product = order.products.firstWhere((Product product) => product.id == item.productId);
-
-                  return Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Row(
                     children: <Widget>[
-                      Row(
-                        children: <Widget>[
-                          Text('# ${order.id}'),
-                          const Spacer(),
-                          Chip(
-                            label: Text(order.status.name),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 8),
-                      ListTile(
-                        contentPadding: EdgeInsets.zero,
-                        leading: CachedNetworkImage(
-                          imageUrl: product.image,
-                          fit: BoxFit.cover,
-                          height: 56.0,
-                          width: 56.0,
-                        ),
-                        title: Text(product.title),
-                        trailing: Text('${product.price * item.quantity} lei'),
+                      Text('# ${order.id}'),
+                      const Spacer(),
+                      Chip(
+                        label: Text(order.status.name),
                       ),
                     ],
-                  );
-                }).toList(),
+                  ),
+                  Column(
+                    children: order.cart.items.map((CartItem item) {
+                      final Product product =
+                          order.products.firstWhere((Product product) => product.id == item.productId);
+
+                      return Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          const SizedBox(height: 8),
+                          ListTile(
+                            contentPadding: EdgeInsets.zero,
+                            leading: CachedNetworkImage(
+                              imageUrl: product.image,
+                              fit: BoxFit.cover,
+                              height: 56.0,
+                              width: 56.0,
+                            ),
+                            title: Text(product.title),
+                            trailing: Text('${product.price * item.quantity} lei'),
+                          ),
+                        ],
+                      );
+                    }).toList(),
+                  ),
+                ],
               );
             },
             separatorBuilder: (BuildContext context, int index) {
