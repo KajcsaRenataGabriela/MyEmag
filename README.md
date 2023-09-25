@@ -19,3 +19,4 @@ Here is a video of the app:
 https://github.com/KajcsaRenataGabriela/MyEmag/assets/67558003/6f9d965c-3135-4ab6-872f-1458075b3fd6
 
 
+* can authenticate error appears because I used biometrics checker and recorded on emulator (only real devices, that have biometrics should be able to order in my app)
