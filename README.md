@@ -1,5 +1,5 @@
 # My Emag
-Flutter project that replicates ermag.ro
+An e-commerce Flutter project that is inspired by emag.ro
 
 Perks:
 * **redux** 
@@ -16,5 +16,5 @@ Perks:
 
 Here is a video of the app:
 
-https://github.com/KajcsaRenataGabriela/MyEmag/assets/67558003/105df67a-b3fc-4e15-a9d5-78f2582b7488
+https://github.com/KajcsaRenataGabriela/MyEmag/recording.mp4
 
