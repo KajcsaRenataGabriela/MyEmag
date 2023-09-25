@@ -19,6 +19,8 @@ class HomePage extends StatelessWidget {
       //ignore: use_build_context_synchronously
       _showMessage('Can authenticate: $canAuthenticate', context);
     } on Exception catch (exception) {
+      // this for sure won't pop
+      //ignore: use_build_context_synchronously
       _showErrorMessage(exception, context);
     }
   }
