@@ -16,5 +16,5 @@ Perks:
 
 Here is a video of the app:
 
-https://github.com/KajcsaRenataGabriela/MyEmag/recording.mp4
+[[https://github.com/KajcsaRenataGabriela/MyEmag/recording.mp4](https://github.com/KajcsaRenataGabriela/MyEmag/blob/main/recording.mp4)https://github.com/KajcsaRenataGabriela/MyEmag/blob/main/recording.mp4](https://github.com/KajcsaRenataGabriela/MyEmag/blob/main/recording.mp4)https://github.com/KajcsaRenataGabriela/MyEmag/blob/main/recording.mp4
 
